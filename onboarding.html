@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JM Tech Centre - Onboarding</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .logo {
+            max-width: 150px;
+        }
+        
+        .apply-btn {
+            border: 2px solid #ff3131;
+            color: #ff3131;
+            background-color: white;
+            border-radius: 25px;
+            padding: 8px 25px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .apply-btn:hover {
+            background-color: #ff3131;
+            color: white;
+        }
+        
+        .apply-btn-red {
+            background-color: #ff3131;
+            color: white;
+            border-radius: 25px;
+            padding: 8px 25px;
+            font-weight: 500;
+            border: none;
+            transition: all 0.3s ease;
+        }
+        
+        .apply-btn-red:hover {
+            background-color: #d82020;
+        }
+        
+        .about-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('./assets/img/onboarding2.png') no-repeat center center;
+            background-size: cover;
+            color: white;
+            padding: 40px;
+            border-radius: 8px;
+        }
+        
+        .about-title {
+            color: #f9b921;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        
+        .user-group-card {
+            background-color: #f9f9f9;
+            padding: 20px;
+            height: 100%;
+            border-radius: 5px;
+        }
+        
+        .user-group-title {
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        .course-card {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .course-image {
+            margin-bottom: 15px;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .course-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        
+        .benefit-check {
+            color: #00b96f;
+            margin-right: 10px;
+            flex-shrink: 0;
+            margin-top: 3px;
+        }
+        
+        .cta-section {
+            background-color: #f2f2f2;
+            padding: 50px 0;
+        }
+        
+        .cta-title {
+            font-weight: bold;
+            margin-bottom: 0;
+        }
+        
+        footer {
+            background-color: #000;
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .social-link {
+            background-color: #333;
+            color: white;
+            width: 40px;
+            height: 40px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-right: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background-color: #555;
+            color: white;
+        }
+        
+        .tech-red {
+            color: #ff3131;
+        }
+        
+        #back-to-top {
+            cursor: pointer;
+        }
+        
+        @media (max-width: 768px) {
+            .about-section {
+                padding: 25px;
+            }
+            
+            .user-group-card {
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="py-3 border-bottom">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a href="#" class="logo-container">
+                <img src="/api/placeholder/150/60" alt="JM Tech Centre Logo" class="logo">
+            </a>
+            <a href="#" class="apply-btn text-decoration-none">Apply Here</a>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section class="container mt-4">
+        <div class="about-section">
+            <h2 class="about-title">About JM Tech Centre</h2>
+            <p>The JM Tech Centre IT Skilling Program is anchored on the Microsoft Future-Ready Program. It is a digital empowerment program delivered in partnership with Microsoft to upskill higher education students, build capacity in IT, and prepare our tech champions for local and global employability after school. This program offers everyone access to rich technology content and mentors via an online platform. It is organized into learning paths to give an end-to-end view of a technology area and ensure that you build a comprehensive skill set.</p>
+        </div>
+    </section>
+
+    <!-- Who is this program for Section -->
+    <section class="container mt-5">
+        <h2 class="mb-4">Who is this program for?</h2>
+        <p>This program is designed and made available for a wide variety of users:</p>
+        
+        <div class="row mt-4">
+            <div class="col-md-3 mb-4">
+                <div class="user-group-card">
+                    <h3 class="user-group-title">Tertiary Institution (Public and Private)</h3>
+                    <p>Students of any discipline who have an interest in developing IT skills.</p>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="user-group-card">
+                    <h3 class="user-group-title">Educators (Teachers & Lecturers)</h3>
+                    <p>Teachers & Lecturers who want to enhance their work with relevant skills in IT could also enroll in the program.</p>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="user-group-card">
+                    <h3 class="user-group-title">National Youth Corps Members</h3>
+                    <p>Graduates who are currently serving and hope to start a career or a business with the help of technology.</p>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="user-group-card">
+                    <h3 class="user-group-title">Unemployed Graduates</h3>
+                    <p>Unemployed Graduates of any discipline who want to upskill themselves for jobs.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row mt-2">
+            <div class="col-md-4 mb-4">
+                <div class="user-group-card">
+                    <h3 class="user-group-title">Secondary School (SS2 & SS3)</h3>
+                    <p>Students who have an interest/passion in developing IT skills could also enroll in the program and follow the track that will enhance their academics and future work.</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="user-group-card">
+                    <h3 class="user-group-title">Corporate Workers</h3>
+                    <p>Employees who want to build a career or switch careers in Tech.</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="user-group-card">
+                    <h3 class="user-group-title">Religious Institutions/Personnel</h3>
+                    <p>Religious Institutions who want to harness the advantage of Tech.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section class="container mt-5">
+        <h2 class="mb-4">Courses</h2>
+        <p>Each learning path consists of step-by-step tutorials that allow participants track progress, check knowledge, and validate deployments to earn points, levels, achievements and trophies, exciting right? To get started on the right learning path, <a href="#" class="text-decoration-none tech-red">apply here</a>.</p>
+        
+        <div class="row mt-4">
+            <div class="col-md-3 mb-4">
+                <div class="course-card">
+                    <div class="course-image">
+                        <img src="/api/placeholder/250/180" alt="Computer Science" class="img-fluid">
+                    </div>
+                    <h3 class="course-title">Computer Science</h3>
+                    <p>Coding skills (Frontend and Backend) based on the latest tools and techniques.</p>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="course-card">
+                    <div class="course-image">
+                        <img src="/api/placeholder/250/180" alt="IT Infrastructure" class="img-fluid">
+                    </div>
+                    <h3 class="course-title">IT Infrastructure</h3>
+                    <p>Skills in IT administration and cloud platform solutions.</p>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="course-card">
+                    <div class="course-image">
+                        <img src="/api/placeholder/250/180" alt="Data Science" class="img-fluid">
+                    </div>
+                    <h3 class="course-title">Data Science</h3>
+                    <p>Introduction to data science concepts and tools.</p>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="course-card">
+                    <div class="course-image">
+                        <img src="/api/placeholder/250/180" alt="Office Productivity Applications" class="img-fluid">
+                    </div>
+                    <h3 class="course-title">Office Productivity Applications</h3>
+                    <p>Mastery of the productivity applications broadly used in business</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="container mt-5">
+        <h2 class="mb-4">Benefits</h2>
+        
+        <div class="row">
+            <div class="col-md-6">
+                <div class="benefit-item">
+                    <div class="benefit-check">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+                    <div>
+                        Development of the right tech skillset that makes you employable immediately after graduation through a well-coordinated learning program path.
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-check">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+                    <div>
+                        Microsoft Certification through completion of learning resources allocated to this program, to boost your knowledge and skill.
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-check">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+                    <div>
+                        One (1) complimentary voucher for your certification examination.
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-check">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+                    <div>
+                        Accelerate Digital Transformation, Good Practices for Developing and Driving IT Centric Innovations
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-check">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+                    <div>
+                        Access to the JM Tech Centre Facility after the program for more engaging and immersive learning.
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-check">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+                    <div>
+                        Opportunity to work on practical projects to develop expertise.
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-check">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+                    <div>
+                        Access to mentors and periodic seminars from successful industry professionals and top-ranking citizens.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="benefit-item">
+                    <div class="benefit-check">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+                    <div>
+                        24/7 Access to the learning platform to learn at your pace.
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-check">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+                    <div>
+                        A very good way to engage yourself during holidays and unforeseen closure of schools.
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-check">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+                    <div>
+                        Connect with other students (globally) who share the same passion with you in focused Leagues and use tech to solve real-world challenges together.
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-check">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+                    <div>
+                        Take your creativity to the world stage through the opportunity of participating in the Microsoft Imagine Cup.
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-check">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+                    <div>
+                        As an educator (teacher or lecturer), you will get resources and training to enhance the classroom experience by delivering cutting-edge technology instructions.
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-check">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+                    <div>
+                        As a tertiary institution, you will be equipped with a high-quality curriculum that is easy to administer and adds value to your students with certification.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section mt-5">
+        <div class="container">
+            <div class="row justify-content-between align-items-center">
+                <div class="col-md-5">
+                    <h2 class="cta-title">Start a training today</h2>
+                </div>
+                <div class="col-md-5">
+                    <p class="mb-4">Want to be a part of our future tech ready champions? Explore available learning paths that meet your needs!</p>
+                    <a href="#" class="apply-btn-red text-decoration-none">Apply Here</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <h2 class="mb-3">Let's get in touch</h2>
+            <p class="mb-4">Connect with us on our social media platforms and via our email.</p>
+            
+            <div class="social-links mb-5">
+                <a href="#" class="social-link">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" class="social-link">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="social-link">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Contact Us</h5>
+                    <p>Phone: +234 806 039 5407</p>
+                    <p>Email: skillslab@jmtechcenter.org</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p>© 2025 - <span class="tech-red">JMTech Centre</span> All Right Reserved</p>
+                    <p id="back-to-top">Back to top</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Back to top functionality
+        document.getElementById('back-to-top').addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        // Add animation to elements on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            // This would be enhanced with proper animation libraries in a real implementation
+            const animateOnScroll = function() {
+                const elements = document.querySelectorAll('.user-group-card, .course-card, .benefit-item');
+                elements.forEach(element => {
+                    const position = element.getBoundingClientRect();
+                    if(position.top < window.innerHeight) {
+                        element.style.transition = 'opacity 0.5s ease-in-out, transform 0.5s ease-in-out';
+                        element.style.opacity = '1';
+                        element.style.transform = 'translateY(0)';
+                    }
+                });
+            };
+            
+            // Set initial state
+            const elements = document.querySelectorAll('.user-group-card, .course-card, .benefit-item');
+            elements.forEach(element => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(20px)';
+            });
+            
+            // Run on load
+            animateOnScroll();
+            
+            // Add event listener
+            window.addEventListener('scroll', animateOnScroll);
+        });
+    </script>
+</body>
+</html>

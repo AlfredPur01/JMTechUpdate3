@@ -1,0 +1,1660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JM Tech Centre</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome for icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #e50000;
+      --dark-blue: #0a0a2e;
+      --light-gray: #f8f8f8;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    /* Navbar styles */
+    .navbar {
+      padding: 15px 0;
+      background-color: white;
+    }
+    
+    .navbar-brand img {
+      max-height: 70px; /* Increased logo size */
+    }
+    
+    .nav-link {
+      color: #000;
+      font-weight: 500;
+      margin: 0 10px;
+      position: relative;
+    }
+    
+    .nav-link.active {
+      color: var(--primary-color);
+      border-bottom: 3px solid var(--primary-color);
+    }
+    
+    /* Hero section */
+.hero-section {
+  padding: 80px 0;
+  background-color: white;
+}
+
+.hero-section h1 {
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--dark-blue);
+  margin-bottom: 30px;
+}
+
+.hero-section p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+/* Added spacing between text and image */
+.hero-section .col-lg-6 {
+  padding: 0 25px;
+}
+
+/* Hero image styling */
+.hero-image {
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 30px; /* Additional spacing above the image */
+}
+
+/* Quote styling */
+.quote-box {
+  background-color: #000;
+  color: white;
+  padding: 20px;
+  border-radius: 5px;
+  position: relative;
+}
+
+.quote-mark {
+  color: var(--primary-color);
+  font-size: 60px;
+  font-weight: bold;
+  line-height: 0;
+  position: absolute;
+  top: 20px;
+  left: 10px;
+}
+
+/* CTA Button styling */
+.btn-primary {
+  background-color: #e50000;
+  border-color: #e50000;
+  color: white;
+  font-weight: 600;
+}
+
+.btn-primary:hover {
+  background-color: #cc0000;
+  border-color: #cc0000;
+}
+    
+    /* Statement cards */
+    .statement-section {
+      background-color: var(--light-gray);
+      padding: 60px 0;
+    }
+    
+    .statement-card {
+      background-color: #000;
+      color: white;
+      padding: 30px;
+      border-radius: 10px;
+      height: 100%;
+      position: relative;
+    }
+    
+    .statement-card h5 {
+      color: #f8a100;
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+    }
+    
+    .red-quote {
+      color: var(--primary-color);
+      font-size: 40px;
+      font-weight: bold;
+      position: absolute;
+      top: 0;
+      left: 10px;
+    }
+    
+    /* Services Section (previously "Focus areas") */
+    /* Service Cards Styling */
+.service-card {
+  perspective: 1000px;
+  height: 300px;
+  margin-bottom: 30px;
+}
+
+.service-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 10px;
+}
+
+/* Handle hover states differently based on device capabilities */
+@media (hover: hover) {
+  /* Only apply hover effect on devices that support hover */
+  .service-card:hover .service-card-inner {
+    transform: rotateY(180deg);
+  }
+}
+
+/* For touch devices */
+.service-card.active .service-card-inner {
+  transform: rotateY(180deg);
+}
+
+.service-card-front, .service-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.service-card-front {
+  background-color: white;
+}
+
+.service-card-front img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.service-card-front h4 {
+  padding: 15px 10px;
+  margin: 0;
+  background-color: white;
+  color: var(--dark-blue);
+}
+
+.service-card-back {
+  background-color: var(--dark-blue);
+  color: white;
+  transform: rotateY(180deg);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.service-card-back h4 {
+  margin-bottom: 20px;
+  color: var(--primary-color);
+}
+
+.service-card-back ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.service-card-back ul li {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.service-card-back ul li i {
+  color: var(--primary-color);
+  margin-right: 10px;
+  margin-top: 4px;
+}
+
+.btn-learn-more {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 30px;
+  margin-top: auto;
+  display: inline-block;
+  transition: all 0.3s;
+}
+
+.btn-learn-more:hover {
+  background-color: #cc0000;
+  color: white;
+  transform: translateY(-3px);
+}
+
+/* Make adjustments for smaller screens */
+@media (max-width: 991px) {
+  .service-card {
+    height: 280px;
+  }
+  
+  .service-card-back ul li {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 767px) {
+  .service-card {
+    height: 320px;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Add a visible button for touch devices to trigger flip */
+.flip-button {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: rgba(255,255,255,0.7);
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  cursor: pointer;
+}
+
+@media (hover: hover) {
+  /* Hide flip button on devices that support hover */
+  .flip-button {
+    display: none;
+  }
+}
+    
+    /* Registration section */
+    .register-section {
+      padding: 60px 0;
+      background-color: var(--light-gray);
+    }
+    
+    .register-card {
+      border-radius: 10px;
+      overflow: hidden;
+      background-color: white;
+    }
+    
+    .register-card img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+    
+    .register-content {
+      padding: 30px;
+      text-align: center;
+    }
+    
+    .register-content h2 {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    
+    .btn-register {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 12px 30px;
+      border-radius: 30px;
+      font-weight: 600;
+      border: none;
+      transition: all 0.3s;
+    }
+    
+    .btn-register:hover {
+      background-color: #cc0000;
+      transform: scale(1.05);
+    }
+    
+    /* Testimonials */
+    .testimonial-section {
+      padding: 60px 0;
+      background-color: #f8f9fa;
+    }
+    
+    .testimonial-container {
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+    
+    .testimonial-item {
+      display: none;
+      transition: opacity 0.6s ease;
+    }
+    
+    .testimonial-item.active {
+      display: block;
+    }
+    
+    .testimonial-image {
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    
+    .testimonial-dots .dot {
+      cursor: pointer;
+      height: 12px;
+      width: 12px;
+      margin: 0 5px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+    }
+    
+    .testimonial-dots .dot.active,
+    .testimonial-dots .dot:hover {
+      background-color: #e50000;
+    }
+    
+    .testimonial-arrows {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      transform: translateY(-50%);
+    }
+    
+    .prev-arrow, .next-arrow {
+      cursor: pointer;
+      position: absolute;
+      padding: 10px;
+      color: white;
+      background-color: #e50000;
+      border: none;
+      border-radius: 50%;
+      font-weight: bold;
+      font-size: 16px;
+      transition: 0.6s ease;
+    }
+    
+    .prev-arrow {
+      left: 10px;
+    }
+    
+    .next-arrow {
+      right: 10px;
+    }
+    
+    .prev-arrow:hover, .next-arrow:hover {
+      background-color: #c50000;
+    }
+    
+    /*Gallery section */
+    .gallery-section {
+      background-color: #f8f9fa;
+      margin-top: 2rem;
+    }
+    
+    .gallery-carousel-container {
+      overflow: hidden;
+      padding: 2rem 0;
+    }
+    
+    .gallery-track {
+      display: flex;
+      transition: transform 0.8s ease;
+      gap: 1.5rem;
+      padding: 1rem 0;
+    }
+    
+    .gallery-item {
+      min-width: 300px;
+      flex: 0 0 300px;
+      position: relative;
+      transform: perspective(800px) rotateY(0deg);
+      transition: transform 0.6s ease, opacity 0.4s ease;
+    }
+    
+    .gallery-item:hover {
+      transform: perspective(800px) rotateY(5deg) translateY(-10px);
+    }
+    
+    .gallery-item img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 3px solid #fff;
+    }
+    
+    .gallery-caption {
+      text-align: center;
+      padding: 0.5rem;
+      font-weight: 500;
+      background-color: rgba(255,255,255,0.9);
+      border-radius: 0 0 8px 8px;
+      position: absolute;
+      bottom: 3px;
+      left: 3px;
+      right: 3px;
+    }
+    
+    .gallery-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,0.8);
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 10;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
+    }
+    
+    .gallery-nav:hover {
+      background: rgba(255,255,255,1);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+    
+    .prev-btn {
+      left: 10px;
+    }
+    
+    .next-btn {
+      right: 10px;
+    }
+    
+    .gallery-indicators {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 1.5rem;
+    }
+    
+    .paw-print {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12,12c-1,0-2,0.9-2,2s0.9,2,2,2s2-0.9,2-2S13,12,12,12z M16.5,7.6c-0.5-0.7-1.3-1.1-2.2-1.1c-0.8,0-1.6,0.4-2.1,1.1c-0.5,0.7-0.5,1.6,0,2.3s1.3,1.1,2.1,1.1c0.8,0,1.6-0.4,2.1-1.1C17,9.2,17,8.3,16.5,7.6z M9.8,7.6C9.2,6.9,8.5,6.5,7.6,6.5c-0.8,0-1.6,0.4-2.1,1.1C5,8.3,5,9.2,5.5,9.9s1.3,1.1,2.1,1.1c0.8,0,1.6-0.4,2.1-1.1C10.2,9.2,10.2,8.3,9.8,7.6z M16.4,14.4c-0.5-0.7-1.3-1.1-2.1-1.1c-0.8,0-1.6,0.4-2.1,1.1c-0.5,0.7-0.5,1.6,0,2.3s1.3,1.1,2.1,1.1c0.8,0,1.6-0.4,2.1-1.1C16.9,16,16.9,15.1,16.4,14.4z M9.8,14.4c-0.5-0.7-1.3-1.1-2.1-1.1c-0.8,0-1.6,0.4-2.1,1.1c-0.5,0.7-0.5,1.6,0,2.3s1.3,1.1,2.1,1.1c0.8,0,1.6-0.4,2.1-1.1C10.2,16,10.2,15.1,9.8,14.4z' fill='%23ccc'/%3E%3C/svg%3E");
+      background-size: contain;
+      cursor: pointer;
+      opacity: 0.5;
+      transition: opacity 0.3s ease;
+    }
+    
+    .paw-print.active {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12,12c-1,0-2,0.9-2,2s0.9,2,2,2s2-0.9,2-2S13,12,12,12z M16.5,7.6c-0.5-0.7-1.3-1.1-2.2-1.1c-0.8,0-1.6,0.4-2.1,1.1c-0.5,0.7-0.5,1.6,0,2.3s1.3,1.1,2.1,1.1c0.8,0,1.6-0.4,2.1-1.1C17,9.2,17,8.3,16.5,7.6z M9.8,7.6C9.2,6.9,8.5,6.5,7.6,6.5c-0.8,0-1.6,0.4-2.1,1.1C5,8.3,5,9.2,5.5,9.9s1.3,1.1,2.1,1.1c0.8,0,1.6-0.4,2.1-1.1C10.2,9.2,10.2,8.3,9.8,7.6z M16.4,14.4c-0.5-0.7-1.3-1.1-2.1-1.1c-0.8,0-1.6,0.4-2.1,1.1c-0.5,0.7-0.5,1.6,0,2.3s1.3,1.1,2.1,1.1c0.8,0,1.6-0.4,2.1-1.1C16.9,16,16.9,15.1,16.4,14.4z M9.8,14.4c-0.5-0.7-1.3-1.1-2.1-1.1c-0.8,0-1.6,0.4-2.1,1.1c-0.5,0.7-0.5,1.6,0,2.3s1.3,1.1,2.1,1.1c0.8,0,1.6-0.4,2.1-1.1C10.2,16,10.2,15.1,9.8,14.4z' fill='%23333'/%3E%3C/svg%3E");
+      opacity: 1;
+    }
+    
+    .paw-print:hover {
+      opacity: 0.8;
+    }
+    
+    /* Animal-like movement animation */
+    @keyframes galleryBounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+    
+    .gallery-item:nth-child(odd) {
+      animation: galleryBounce 3s ease-in-out infinite;
+    }
+    
+    .gallery-item:nth-child(even) {
+      animation: galleryBounce 3.5s ease-in-out infinite;
+      animation-delay: 0.5s;
+    }
+    
+    /* Transition timer display */
+    .transition-timer-display {
+      background: rgba(255,255,255,0.8);
+      border-radius: 20px;
+      padding: 5px 12px;
+      font-size: 14px;
+      color: #333;
+      display: inline-block;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    #timer-countdown {
+      font-weight: bold;
+      min-width: 15px;
+      display: inline-block;
+      text-align: center;
+    }
+    
+    /* Fade transition effect */
+    .gallery-item.fade-out {
+      opacity: 0.3;
+    }
+    
+    .gallery-item.current {
+      opacity: 1;
+    }
+    
+    /* Progress bar for timer */
+    .timer-progress {
+      width: 100%;
+      height: 3px;
+      background: rgba(0,0,0,0.1);
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      overflow: hidden;
+    }
+    
+    .timer-progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #4a9bd1, #2c7cb0);
+      width: 0%;
+      transition: width linear;
+    }
+    
+    /* Partners styles */
+    .logo-carousel {
+      overflow: hidden;
+    }
+
+    .logo-row {
+      display: flex;
+      animation: slide 20s linear infinite;
+    }
+
+    .logo-row.reverse {
+      animation-direction: reverse;
+    }
+    
+    /* Increased partner logo sizes */
+    .logo-row img {
+      max-width: 180px;
+      height: 90px;
+      object-fit: contain;
+      margin: 0 20px;
+    }
+
+    @keyframes slide {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    
+    /* Smaller event images */
+    #eventsCarousel .carousel-item img {
+      max-height: 400px;
+      width: auto;
+      margin: 0 auto;
+    }
+    
+    /* Footer */
+    .footer {
+      background-color: #000;
+      color: white;
+      padding: 50px 0 20px;
+    }
+    
+    .social-icons a {
+      color: white;
+      font-size: 24px;
+      margin-right: 20px;
+      transition: color 0.3s;
+    }
+    
+    .social-icons a:hover {
+      color: var(--primary-color);
+    }
+    
+    .footer-bottom {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #333;
+    }
+    
+    .back-to-top {
+      color: white;
+      text-decoration: none;
+    }
+    
+    .back-to-top:hover {
+      color: var(--primary-color);
+    }
+    
+    /* CTA Button styling - all changed to #e50000 */
+    .btn-primary, .btn-danger, .btn-outline-primary {
+      background-color: var(--primary-color);
+      border-color: var(--primary-color);
+      color: white;
+    }
+    
+    .btn-primary:hover, .btn-primary:focus, .btn-primary:active,
+    .btn-danger:hover, .btn-danger:focus, .btn-danger:active,
+    .btn-outline-primary:hover, .btn-outline-primary:focus, .btn-outline-primary:active {
+      background-color: #cc0000;
+      border-color: #cc0000;
+      color: white;
+    }
+    
+    .btn-outline-primary {
+      color: var(--primary-color);
+      background-color: transparent;
+    }
+    
+    .countdown-box {
+      background: var(--dark-blue);
+      color: white;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="./assets/newlogo.png" alt="JM Tech Centre Logo" class="logo">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="#home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#services">Our Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#testimonials">Testimonials</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#blog">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+        </ul>
+        <a href="#register" class="btn btn-outline-primary rounded-pill ms-3">Get Started</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+<section id="home" class="hero-section">
+  <div class="container">
+    <div class="row align-items-center">
+      <!-- Left column with text content -->
+      <div class="col-lg-6">
+        <h1>From Tech Solutions to International Impact, We've Got You Covered.</h1>
+        <p>Learn tech, explore top courses, land internships, and ace global exams like IELTS, SAT, TOEFL, and GRE with expert guidance.<br><br>
+          Want to ace your IELTS, SAT, or TOEFL?</p>
+        <a href="https://docs.google.com/forms/d/1zlurl4ltiDzKLo200-oU5IOg15JgnqujFexC2g9WSsg/edit" class="btn btn-primary btn-lg rounded-pill">Register now</a>
+      </div>
+      
+      <!-- Right column with image -->
+      <div class="col-lg-6">
+        <!-- Hero image with quote -->
+        <div class="hero-image position-relative">
+          <img src="./assets/img/Homebg.png" alt="Students working on computers" class="img-fluid rounded">
+          <div class="quote-box position-absolute bottom-0 end-0 m-3">
+            <span class="quote-mark">"</span>
+            <p class="ms-4 mb-0">Dreams don't work unless you take action. The surest way to make your dreams come true is to live them.</p>
+            <p class="text-end fw-bold mb-0 mt-2 text-warning">Roy T. Bennet</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Statement Section -->
+  <section id="about" class="statement-section">
+    <div class="container">
+      <h2 class="text-center mb-5">The JM Tech Centre Statement</h2>
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="statement-card">
+            <div class="red-quote">"</div>
+            <p class="mt-4">To raise IT innovators for the development of Africa.</p>
+            <h5>Vision</h5>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="statement-card">
+            <div class="red-quote">"</div>
+            <p class="mt-4">Collaborate with Multinational IT Companies, Institutions, Entrepreneurs and Government for the training and development of young people to achieve their dreams through innovations in IT.</p>
+            <h5>Mission</h5>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="statement-card">
+            <div class="red-quote">"</div>
+            <p class="mt-4">The vision to develop JM Tech Centre of Excellence was borne out of a crucial desire to reduce poverty particularly in Nigeria and Africa in general.</p>
+            <h5>Motivation</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+<section id="services" class="services-section py-5">
+  <div class="container">
+    <h2 class="text-center">Our Services</h2>
+    <p class="text-center mb-5">We provide comprehensive tech training and support to empower Africa's next generation of IT professionals</p>
+    
+    <div class="row">
+      <!-- International Exams -->
+      <div class="col-md-6 col-lg-3 mb-4">
+        <div class="service-card">
+          <div class="service-card-inner">
+            <div class="service-card-front">
+              <img src="./assets/INT_EXAMS.gif" alt="International Exams">
+              <h4>International Exams</h4>
+              <!-- Flip button will be added by JavaScript for touch devices -->
+            </div>
+            <div class="service-card-back">
+              <h4>International Exams</h4>
+              <ul>
+                <li><i class="fas fa-check-circle"></i> Certification preparation</li>
+                <li><i class="fas fa-check-circle"></i> Exam center facilities</li>
+                <li><i class="fas fa-check-circle"></i> Registration assistance</li>
+              </ul>
+              <a href="#" class="btn btn-learn-more">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Tech Courses -->
+      <div class="col-md-6 col-lg-3 mb-4">
+        <div class="service-card">
+          <div class="service-card-inner">
+            <div class="service-card-front">
+              <img src="./assets/TECH_COURSES.gif" alt="Tech Courses">
+              <h4>Tech Courses</h4>
+              <!-- Flip button will be added by JavaScript for touch devices -->
+            </div>
+            <div class="service-card-back">
+              <h4>Tech Courses</h4>
+              <ul>
+                <li><i class="fas fa-check-circle"></i> Software Development</li>
+                <li><i class="fas fa-check-circle"></i> Data Analysis</li>
+                <li><i class="fas fa-check-circle"></i> Cyber Security</li>
+                <li><i class="fas fa-check-circle"></i> Digital Marketing</li>
+              </ul>
+              <a href="#" class="btn btn-learn-more">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Tech Workshop -->
+      <div class="col-md-6 col-lg-3 mb-4">
+        <div class="service-card">
+          <div class="service-card-inner">
+            <div class="service-card-front">
+              <img src="./assets/WORKSHOP.gif" alt="Tech Workshop">
+              <h4>Tech Workshop</h4>
+              <!-- Flip button will be added by JavaScript for touch devices -->
+            </div>
+            <div class="service-card-back">
+              <h4>Tech Workshop</h4>
+              <ul>
+                <li><i class="fas fa-check-circle"></i> Hands-on training</li>
+                <li><i class="fas fa-check-circle"></i> Project-based learning</li>
+                <li><i class="fas fa-check-circle"></i> Industry mentorship</li>
+              </ul>
+              <a href="#" class="btn btn-learn-more">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Talent Recruitment -->
+      <div class="col-md-6 col-lg-3 mb-4">
+        <div class="service-card">
+          <div class="service-card-inner">
+            <div class="service-card-front">
+              <img src="./assets/TALENT.gif" alt="Talent Recruitment">
+              <h4>Talent Recruitment</h4>
+              <!-- Flip button will be added by JavaScript for touch devices -->
+            </div>
+            <div class="service-card-back">
+              <h4>Talent Recruitment</h4>
+              <ul>
+                <li><i class="fas fa-check-circle"></i> Job placement</li>
+                <li><i class="fas fa-check-circle"></i> Resume preparation</li>
+                <li><i class="fas fa-check-circle"></i> Interview coaching</li>
+              </ul>
+              <a href="#" class="btn btn-learn-more">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Testimonials Section -->
+<section id="testimonials" class="testimonial-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5">
+        <h2 class="mb-4">Testimonials & Success Stories</h2>
+        <p>Discover how our programs have transformed careers and lives. Our graduates have gone on to work at top companies and launch successful businesses in tech.</p>
+      </div>
+      
+      <div class="col-md-7 position-relative">
+        <div class="testimonial-container">
+          
+          <!-- Testimonial Item 1 -->
+          <div class="testimonial-item active" id="testimonial1">
+            <img src="./assets/Testimonials/Artboard 2.jpg" alt="Student 1" class="img-fluid testimonial-image" style="max-height: 400px; width: auto; max-width: 100%;">
+          </div>
+          
+          <!-- Testimonial Item 2 -->
+          <div class="testimonial-item" id="testimonial2">
+            <img src="./assets/Testimonials/Artboard 2 copy.jpg" alt="Student2" class="img-fluid testimonial-image" style="max-height: 400px; width: auto; max-width: 100%;">
+          </div>
+
+          <!-- Testimonial Item 3 -->
+          <div class="testimonial-item" id="testimonial3">
+            <img src="./assets/Testimonials/Artboard 2 copy 2.jpg" alt="Student 3" class="img-fluid testimonial-image" style="max-height: 400px; width: auto; max-width: 100%;">
+          </div>
+
+          <!-- Testimonial Item 4 -->
+          <div class="testimonial-item" id="testimonial4">
+            <img src="./assets/Testimonials//Artboard 2 copy 3.jpg" alt="Student 4" class="img-fluid testimonial-image" style="max-height: 400px; width: auto; max-width: 100%;">
+          </div>
+
+          <!-- Testimonial Item 5 -->
+          <div class="testimonial-item" id="testimonial5">
+            <img src="./assets/Testimonials/Artboard 2 copy 4.jpg" alt="Student 5" class="img-fluid testimonial-image" style="max-height: 400px; width: auto; max-width: 100%;">
+          </div>
+
+          <!-- Testimonial Item 7 -->
+          <div class="testimonial-item" id="testimonial6">
+            <img src="./assets/Testimonials/Artboard 2 copy 5.jpg" alt="Student 6" class="img-fluid testimonial-image" style="max-height: 400px; width: auto; max-width: 100%;">
+          </div>
+          
+          <!-- Navigation Arrows - Now inside the container -->
+          <button class="testimonial-arrow prev-arrow" onclick="changeTestimonial(-1)">&#10094;</button>
+          <button class="testimonial-arrow next-arrow" onclick="changeTestimonial(1)">&#10095;</button>
+        </div>
+        
+        <!-- Testimonial Navigation Dots -->
+        <div class="testimonial-dots text-center mt-4">
+          <span class="dot active" onclick="currentTestimonial(1)"></span>
+          <span class="dot" onclick="currentTestimonial(2)"></span>
+          <span class="dot" onclick="currentTestimonial(3)"></span>
+          <span class="dot" onclick="currentTestimonial(4)"></span>
+          <span class="dot" onclick="currentTestimonial(5)"></span>
+          <span class="dot" onclick="currentTestimonial(6)"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Gallery Section -->
+<section id="gallery" class="gallery-section py-5">
+  <div class="container">
+    <div class="row mb-4">
+      <div class="col-md-6">
+        <h2 class="mb-3">Our Gallery</h2>
+        <p>Explore our vibrant campus life, state-of-the-art facilities, and the exciting journey of our students through their educational experience.</p>
+      </div>
+      <!--<div class="col-md-6 text-end d-flex align-items-center justify-content-end">
+        <div class="transition-timer-display">
+          Auto-transition: <span id="timer-countdown">5</span>s
+        </div>
+      </div>-->
+    </div>
+    
+    <div class="gallery-carousel-container position-relative">
+      <!-- Animal-themed carousel track -->
+      <div class="gallery-track">
+        <div class="gallery-item">
+          <img src="./assets/gallery/Mr_Mike.png" alt="Campus Life" class="img-fluid rounded shadow">
+          <!--<div class="gallery-caption">Modern Learning Spaces</div>-->
+        </div>
+        <div class="gallery-item">
+          <img src="./assets/gallery/Mr_Mike2.png" alt="Tech Meetup" class="img-fluid rounded shadow">
+          <!--<div class="gallery-caption">Industry Networking Events</div>-->
+        </div>
+        <div class="gallery-item">
+          <img src="./assets/gallery/Prof_Bello.png" alt="Coding Workshop" class="img-fluid rounded shadow">
+          <!--<div class="gallery-caption">Hands-on Learning Workshops</div>-->
+        </div>
+        <div class="gallery-item">
+          <img src="./assets/gallery/Alfred.png" alt="Coding Workshop" class="img-fluid rounded shadow">
+          <!--<div class="gallery-caption">Hands-on Learning Workshops</div>-->
+        </div>
+        <div class="gallery-item">
+          <img src="./assets/gallery/Mr_Mike3.png" alt="Coding Workshop" class="img-fluid rounded shadow">
+          <!--<div class="gallery-caption">Hands-on Learning Workshops</div>-->
+        </div>
+        <div class="gallery-item">
+          <img src="./assets/gallery/thumbnail.png" alt="Coding Workshop" class="img-fluid rounded shadow">
+          <!--<div class="gallery-caption">Hands-on Learning Workshops</div>-->
+        </div>
+        <div class="gallery-item">
+          <img src="./assets/gallery/team1.png" alt="Coding Workshop" class="img-fluid rounded shadow">
+          <!--<div class="gallery-caption">Hands-on Learning Workshops</div>-->
+        </div>
+        <div class="gallery-item">
+          <img src="./assets/gallery/team2.png" alt="Coding Workshop" class="img-fluid rounded shadow">
+          <!--<div class="gallery-caption">Hands-on Learning Workshops</div>-->
+        </div>
+        <div class="gallery-item">
+          <img src="./assets/gallery/goup.png" alt="Coding Workshop" class="img-fluid rounded shadow">
+          <!--<div class="gallery-caption">Hands-on Learning Workshops</div>-->
+        </div>
+      
+      <!-- Custom animal-themed navigation -->
+      <button class="gallery-nav prev-btn">
+        <svg class="animal-arrow" viewBox="0 0 24 24" width="40" height="40">
+          <!-- Stylized fox/wolf-like arrow pointing left -->
+          <path d="M15,6L9,12L15,18" stroke="#333" stroke-width="2" fill="none" />
+          <path d="M13,4C10,8 7,10 5,12C7,14 10,16 13,20" stroke="#333" stroke-width="1.5" fill="none" />
+          <circle cx="17" cy="8" r="1" fill="#333" /> <!-- Eye -->
+        </svg>
+      </button>
+      <button class="gallery-nav next-btn">
+        <svg class="animal-arrow" viewBox="0 0 24 24" width="40" height="40">
+          <!-- Stylized fox/wolf-like arrow pointing right -->
+          <path d="M9,6L15,12L9,18" stroke="#333" stroke-width="2" fill="none" />
+          <path d="M11,4C14,8 17,10 19,12C17,14 14,16 11,20" stroke="#333" stroke-width="1.5" fill="none" />
+          <circle cx="7" cy="8" r="1" fill="#333" /> <!-- Eye -->
+        </svg>
+      </button>
+      
+      <!-- Paw print indicators -->
+      <div class="gallery-indicators">
+        <span class="paw-print active" data-index="0"></span>
+        <span class="paw-print" data-index="1"></span>
+        <span class="paw-print" data-index="2"></span>
+        <span class="paw-print" data-index="3"></span>
+        <span class="paw-print" data-index="4"></span>
+        <span class="paw-print" data-index="5"></span>
+        <span class="paw-print" data-index="6"></span>
+        <span class="paw-print" data-index="7"></span>
+        <span class="paw-print" data-index="8"></span>
+        <span class="paw-print" data-index="9"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Partners Section -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Our Partners</h2>
+      <div class="logo-carousel mb-5">
+        <div class="logo-row">
+          <img src="./assets/partners/XDEPUTY.png" alt="Partner 1" class="mx-3">
+          <img src="./assets/partners/SIDMACH.png" alt="Partner 2" class="mx-3">
+          <img src="./assets/partners/HERA_MARKETING.png" alt="Partner 3" class="mx-3">
+          <img src="./assets/partners/DEVFEST.png" alt="Partner 4" class="mx-3">
+          <img src="./assets/partners/SPECTRUM.png" alt="Partner 5" class="mx-3">
+          <img src="./assets/partners/WTM.png" alt="Partner 6" class="mx-3">
+          <!-- Duplicates for seamless scroll -->
+          <img src="./assets/partners/XDEPUTY.png" alt="Partner 1" class="mx-3">
+          <img src="./assets/partners/SIDMACH.png" alt="Partner 2" class="mx-3">
+          <img src="./assets/partners/HERA_MARKETING.png" alt="Partner 3" class="mx-3">
+          <img src="./assets/partners/DEVFEST.png" alt="Partner 4" class="mx-3">
+          <img src="./assets/partners/SPECTRUM.png" alt="Partner 5" class="mx-3">
+          <img src="./assets/partners/WTM.png" alt="Partner 6" class="mx-3">
+        </div>
+        <div class="logo-row reverse">
+          <img src="./assets/partners/WTM.png" alt="Partner 6" class="mx-3">
+          <img src="./assets/partners/SPECTRUM.png" alt="Partner 5" class="mx-3">
+          <img src="./assets/partners/DEVFEST.png" alt="Partner 4" class="mx-3">
+          <img src="./assets/partners/HERA_MARKETING.png" alt="Partner 3" class="mx-3">
+          <img src="./assets/partners/SIDMACH.png" alt="Partner 2" class="mx-3">
+          <img src="./assets/partners/XDEPUTY.png" alt="Partner 1" class="mx-3">
+
+          <!-- Duplicates for seamless scroll -->
+          <img src="./assets/partners/WTM.png" alt="Partner 6" class="mx-3">
+          <img src="./assets/partners/SPECTRUM.png" alt="Partner 5" class="mx-3">
+          <img src="./assets/partners/DEVFEST.png" alt="Partner 4" class="mx-3">
+          <img src="./assets/partners/HERA_MARKETING.png" alt="Partner 3" class="mx-3">
+          <img src="./assets/partners/SIDMACH.png" alt="Partner 2" class="mx-3">
+          <img src="./assets/partners/XDEPUTY.png" alt="Partner 1" class="mx-3">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Events Section -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Upcoming Events</h2>
+      <div id="eventsCarousel" class="carousel slide mb-5" data-bs-ride="carousel" data-bs-interval="5000">
+        <!-- Carousel indicators -->
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#eventsCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Event 1"></button>
+          <button type="button" data-bs-target="#eventsCarousel" data-bs-slide-to="1" aria-label="Event 2"></button>
+          <button type="button" data-bs-target="#eventsCarousel" data-bs-slide-to="2" aria-label="Event 3"></button>
+        </div>
+        
+        <!-- Carousel items -->
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="d-flex justify-content-center">
+              <img src="./assets/img/projects/abr.jpg" alt="AI Workshop Flyer" style="max-height: 400px; width: auto; max-width: 100%;">
+            </div>
+            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded p-2" style="bottom: 10px; left: 50%; transform: translateX(-50%); width: auto;">
+              <h5>AI Workshop</h5>
+              <p>Join our intensive 2-day workshop on practical AI applications</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="d-flex justify-content-center">
+              <img src="./assets/img/projects/abr.jpg" alt="Blockchain Seminar Flyer" style="max-height: 400px; width: auto; max-width: 100%;">
+            </div>
+            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded p-2" style="bottom: 10px; left: 50%; transform: translateX(-50%); width: auto;">
+              <h5>Blockchain Technology Seminar</h5>
+              <p>Learn about the latest developments in blockchain and cryptocurrency</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="d-flex justify-content-center">
+              <img src="./assets/img/projects/abr.jpg" alt="Digital Marketing Bootcamp Flyer" style="max-height: 400px; width: auto; max-width: 100%;">
+            </div>
+            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded p-2" style="bottom: 10px; left: 50%; transform: translateX(-50%); width: auto;">
+              <h5>Digital Marketing Bootcamp</h5>
+              <p>Master the art of digital marketing in our intensive bootcamp</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Carousel controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#eventsCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#eventsCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      
+      <!-- View more events button -->
+      <div class="text-center">
+        <a href="#" class="btn btn-primary">Check for more events</a>
+      </div>
+      
+      <!-- Countdown Box -->
+      <div class="countdown-box text-center mt-4">
+        <h2>Next Training Event</h2>
+        <div class="d-flex justify-content-center gap-4">
+          <div><span id="days">00</span> Days</div>
+          <div><span id="hours">00</span> Hours</div>
+          <div><span id="minutes">00</span> Minutes</div>
+          <div><span id="seconds">00</span> Seconds</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Section -->
+  <section id="blog" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-5">Recent Blogs</h2>
+      <div class="overflow-hidden">
+        <div class="d-flex blog-slider">
+          <div class="card mx-3" style="min-width: 300px;">
+            <img src="./assets/img/courses/4.png" class="card-img-top" alt="IT Certification" style="height: 180px; object-fit: cover;">
+            <div class="card-body">
+              <h5>Exam Tips for IT Certification</h5>
+              <p>Learn how to prepare effectively for your next IT certification exam.</p>
+              <a href="#" class="btn btn-sm btn-primary">Read More</a>
+            </div>
+          </div>
+          <div class="card mx-3" style="min-width: 300px;">
+            <img src="./assets/img/courses/4.png" class="card-img-top" alt="Career Paths" style="height: 180px; object-fit: cover;">
+            <div class="card-body">
+              <h5>Career Guide: Paths in Tech</h5>
+              <p>Explore different career paths in the technology sector and find what suits you.</p>
+              <a href="#" class="btn btn-sm btn-primary">Read More</a>
+            </div>
+          </div>
+          <div class="card mx-3" style="min-width: 300px;">
+            <img src="./assets/img/courses/4.png" class="card-img-top" alt="Tech Trends" style="height: 180px; object-fit: cover;">
+            <div class="card-body">
+              <h5>Latest Tech Trends in 2025</h5>
+              <p>Stay updated with the latest technologies shaping our digital future.</p>
+              <a href="#" class="btn btn-sm btn-primary">Read More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-4">
+        <a href="#" class="btn btn-primary">View All Posts</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-5">FAQs</h2>
+      <div class="accordion" id="faqAccordion">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+              What are the fees for training programs?
+            </button>
+          </h2>
+          <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Fees vary by program. Please contact our admissions team for detailed information about specific courses and payment plans.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+              How long are the training programs?
+            </button>
+          </h2>
+          <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Our programs range from short-term workshops (1-2 weeks) to comprehensive courses (3-6 months), depending on the subject and depth of content.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+              Are there prerequisites for enrolling?
+            </button>
+          </h2>
+          <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Prerequisites vary by program. Basic courses often have no specific requirements, while advanced courses may require prior knowledge or experience in related fields.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Registration Section -->
+<section id="register" class="register-section">
+  <div class="container">
+    <div class="register-card position-relative">
+      <div class="row g-0">
+        <div class="col-md-12">
+          <div class="position-relative">
+            <!-- Background image -->
+            <img src="./assets/background.jpg" alt="Training session" class="img-fluid w-100">
+            
+            <!-- Content overlay -->
+            <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center" style="background-color: rgba(0, 0, 0, 0.6);">
+              <div class="register-content text-center text-white p-4">
+                <h2>Register Here to join a training</h2>
+                <p>Registration to get access to training on any of our courses is ongoing</p>
+                <p>Click on the Register button below to get started with your application</p>
+                <a href="./onboarding.html" class="btn btn-register">Get Started</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Newsletter Section -->
+<section class="newsletter-section py-5 bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center mb-4">
+        <h2>Subscribe to Our Newsletter</h2>
+        <p class="lead">Stay updated with our latest courses, events, and tech insights</p>
+      </div>
+    </div>
+    <div class="card shadow">
+      <div class="row g-0">
+        <div class="col-md-6">
+          <img src="./assets/img/newsletter.jpg" alt="Newsletter Flier" class="img-fluid h-100 w-100 object-fit-cover">
+        </div>
+        <div class="col-md-6">
+          <div class="card-body p-4 p-lg-5">
+            <h3 class="card-title mb-4">Join our community of tech enthusiasts!</h3>
+            <p class="card-text mb-4">Get exclusive access to:</p>
+            <ul class="mb-4">
+              <li class="mb-2">Early bird discounts on new courses</li>
+              <li class="mb-2">Free tech webinars and workshops</li>
+              <li class="mb-2">Industry insights and career opportunities</li>
+              <li class="mb-2">Success stories from our alumni</li>
+            </ul>
+            <form class="newsletter-form">
+              <div class="mb-3">
+                <input type="text" class="form-control form-control-lg" placeholder="Full Name" required>
+              </div>
+              <div class="mb-3">
+                <input type="email" class="form-control form-control-lg" placeholder="Email Address" required>
+              </div>
+              <!--<div class="mb-3">
+                <select class="form-select form-select-lg">
+                  <option selected>Areas of Interest</option>
+                  <option value="ai">Machine Learning & AI</option>
+                  <option value="robotics">Embedded Coding & Robotics</option>
+                  <option value="blockchain">Blockchain Technology</option>
+                  <option value="software">Software Development</option>
+                  <option value="cyber">Cyber Security</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>-->
+              <div class="d-grid">
+                <button type="submit" class="btn btn-danger btn-lg">Subscribe Now</button>
+              </div>
+              <div class="form-text text-center mt-3">
+                <small>By subscribing, you agree to receive our newsletter emails. You can unsubscribe at any time.</small>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-5">Contact Us</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <form>
+            <div class="mb-3">
+              <input type="text" class="form-control" placeholder="Name" required>
+            </div>
+            <div class="mb-3">
+              <input type="email" class="form-control" placeholder="Email" required>
+            </div>
+            <div class="mb-3">
+              <textarea class="form-control" rows="4" placeholder="Message" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4">
+          <h3>Let's get in touch</h3>
+          <p>Connect with us on our social media platforms and via our email.</p>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/jmtechcenter/"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/jmtechcentre?igsh=MXN4dThrOXkwa2lpdA=="><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/jmtechcenter/"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <h3>Contact Us</h3>
+          <p>Phone: +234 806 039 5407</p>
+          <p>Email: skillslab@jmtechcenter.org</p>
+        </div>
+      </div>
+      <div class="row footer-bottom">
+        <div class="col-md-6">
+          <p>&copy; 2025 - JMTech Centre All Right Reserved</p>
+        </div>
+        <div class="col-md-6 text-end">
+          <a href="#" class="back-to-top">Back to top</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap Bundle with Popper -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Countdown Timer
+    const eventDate = new Date('2025-06-01T09:00:00').getTime();
+    const countdown = setInterval(() => {
+        const now = new Date().getTime();
+        const distance = eventDate - now;
+        
+        document.getElementById('days').textContent = String(Math.floor(distance / (1000 * 60 * 60 * 24))).padStart(2, '0');
+        document.getElementById('hours').textContent = String(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
+        document.getElementById('minutes').textContent = String(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+        document.getElementById('seconds').textContent = String(Math.floor((distance % (1000 * 60)) / 1000)).padStart(2, '0');
+        
+        if (distance < 0) {
+            clearInterval(countdown);
+            document.querySelector('.countdown-box').innerHTML = "<h2>Event Started!</h2>";
+        }
+    }, 1000);
+
+    //Testimonials
+    let testimonialIndex = 1;
+    let slideInterval;
+    
+    // Auto slide every 5 seconds
+    function startAutoSlide() {
+      slideInterval = setInterval(() => {
+        changeTestimonial(1);
+      }, 5000);
+    }
+    
+    // Show current testimonial
+    function showTestimonial(n) {
+      const testimonials = document.getElementsByClassName("testimonial-item");
+      const dots = document.getElementsByClassName("dot");
+      
+      if (n > testimonials.length) {
+        testimonialIndex = 1;
+      }
+      if (n < 1) {
+        testimonialIndex = testimonials.length;
+      }
+      
+      // Hide all testimonials
+      for (let i = 0; i < testimonials.length; i++) {
+        testimonials[i].classList.remove("active");
+        dots[i].classList.remove("active");
+      }
+      
+      // Show the current testimonial
+      testimonials[testimonialIndex - 1].classList.add("active");
+      dots[testimonialIndex - 1].classList.add("active");
+    }
+    
+    // Change testimonial
+    function changeTestimonial(n) {
+      clearInterval(slideInterval);
+      showTestimonial(testimonialIndex += n);
+      startAutoSlide();
+    }
+    
+    // Set current testimonial
+    function currentTestimonial(n) {
+      clearInterval(slideInterval);
+      showTestimonial(testimonialIndex = n);
+      startAutoSlide();
+    }
+    
+    // Initialize the slider
+    document.addEventListener("DOMContentLoaded", function() {
+      showTestimonial(testimonialIndex);
+      startAutoSlide();
+    });
+
+    // Add this script at the end of your HTML, right before the closing </body> tag
+document.addEventListener('DOMContentLoaded', function() {
+  // Check if device is touch-capable
+  const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+  
+  if (isTouchDevice) {
+    // Add flip buttons to all service cards
+    document.querySelectorAll('.service-card-front').forEach(front => {
+      const flipButton = document.createElement('button');
+      flipButton.className = 'flip-button';
+      flipButton.innerHTML = '<i class="fas fa-redo"></i>'; // Rotation icon
+      front.appendChild(flipButton);
+    });
+    
+    // Add click event listeners to flip buttons
+    document.querySelectorAll('.flip-button').forEach(button => {
+      button.addEventListener('click', function(e) {
+        e.stopPropagation(); // Prevent the click from propagating
+        const card = this.closest('.service-card');
+        card.classList.toggle('active');
+      });
+    });
+    
+    // Add click event to back side to flip back
+    document.querySelectorAll('.service-card-back').forEach(back => {
+      back.addEventListener('click', function() {
+        const card = this.closest('.service-card');
+        if (!event.target.classList.contains('btn-learn-more')) {
+          card.classList.remove('active');
+        }
+      });
+    });
+  }
+});
+
+//Gallery Section
+document.addEventListener('DOMContentLoaded', function() {
+  const track = document.querySelector('.gallery-track');
+  const items = document.querySelectorAll('.gallery-item');
+  const prevBtn = document.querySelector('.prev-btn');
+  const nextBtn = document.querySelector('.next-btn');
+  const indicators = document.querySelectorAll('.paw-print');
+  const timerDisplay = document.getElementById('timer-countdown');
+  
+  let currentIndex = 0;
+  const itemWidth = 300 + 24; // width + gap
+  const visibleItems = Math.max(1, Math.floor(track.offsetWidth / itemWidth));
+  const maxIndex = Math.max(0, items.length - visibleItems);
+  
+  // Set up auto transition variables
+  const transitionInterval = 5000; // 5 seconds between transitions
+  let autoTransitionTimer;
+  let countdown = 5;
+  let countdownInterval;
+  
+  // Update the carousel position
+  function updateCarousel() {
+    // Apply transformation to the track
+    track.style.transform = `translateX(${-currentIndex * itemWidth}px)`;
+    
+    // Update all items to have reduced opacity
+    items.forEach(item => {
+      item.classList.remove('current');
+      item.classList.add('fade-out');
+    });
+    
+    // Make visible items fully opaque
+    for (let i = currentIndex; i < currentIndex + visibleItems && i < items.length; i++) {
+      items[i].classList.remove('fade-out');
+      items[i].classList.add('current');
+    }
+    
+    // Update indicators
+    indicators.forEach((indicator, index) => {
+      indicator.classList.toggle('active', index === Math.min(Math.floor(currentIndex / (maxIndex / (indicators.length - 1))), indicators.length - 1));
+    });
+    
+    // Reset the countdown timer
+    resetCountdown();
+  }
+  
+  // Move to the previous slide
+  function prevSlide() {
+    currentIndex = Math.max(0, currentIndex - 1);
+    updateCarousel();
+  }
+  
+  // Move to the next slide
+  function nextSlide() {
+    if (currentIndex >= maxIndex) {
+      // Create a rewinding animation
+      track.style.transition = 'none';
+      currentIndex = 0;
+      setTimeout(() => {
+        track.style.transition = 'transform 0.8s ease';
+        updateCarousel();
+      }, 50);
+    } else {
+      currentIndex++;
+      updateCarousel();
+    }
+  }
+  
+  // Reset and start the countdown timer
+  function resetCountdown() {
+    // Clear existing intervals
+    clearInterval(countdownInterval);
+    clearTimeout(autoTransitionTimer);
+    
+    // Reset countdown display
+    countdown = 5;
+    timerDisplay.textContent = countdown;
+    
+    // Create new countdown
+    countdownInterval = setInterval(() => {
+      countdown--;
+      timerDisplay.textContent = countdown;
+      if (countdown <= 0) {
+        clearInterval(countdownInterval);
+      }
+    }, 1000);
+    
+    // Set auto transition
+    autoTransitionTimer = setTimeout(nextSlide, transitionInterval);
+  }
+  
+  // Add click handlers for the navigation buttons
+  prevBtn.addEventListener('click', () => {
+    prevSlide();
+  });
+  
+  nextBtn.addEventListener('click', () => {
+    nextSlide();
+  });
+  
+  // Add click handlers for indicators
+  indicators.forEach((indicator, index) => {
+    indicator.addEventListener('click', () => {
+      // Map indicator index to a position in the carousel
+      // This makes indicators work evenly across the entire range
+      currentIndex = Math.min(Math.floor((index / (indicators.length - 1)) * maxIndex), maxIndex);
+      updateCarousel();
+    });
+  });
+  
+  // Animal-like behavior: occasional random movement
+  setInterval(() => {
+    if (Math.random() > 0.7) { // 30% chance of random movement
+      const randomItem = Math.floor(Math.random() * items.length);
+      items[randomItem].style.transform = 'perspective(800px) rotateY(8deg) translateY(-15px)';
+      setTimeout(() => {
+        items[randomItem].style.transform = '';
+      }, 1000);
+    }
+  }, 5000);
+  
+  // Pause auto-advance on hover
+  track.addEventListener('mouseenter', () => {
+    clearInterval(countdownInterval);
+    clearTimeout(autoTransitionTimer);
+    timerDisplay.parentElement.style.opacity = '0.5';
+  });
+  
+  track.addEventListener('mouseleave', () => {
+    resetCountdown();
+    timerDisplay.parentElement.style.opacity = '1';
+  });
+  
+  // Pause on button hover too
+  prevBtn.addEventListener('mouseenter', () => {
+    clearInterval(countdownInterval);
+    clearTimeout(autoTransitionTimer);
+  });
+  
+  prevBtn.addEventListener('mouseleave', () => {
+    if (!track.matches(':hover')) {
+      resetCountdown();
+    }
+  });
+  
+  nextBtn.addEventListener('mouseenter', () => {
+    clearInterval(countdownInterval);
+    clearTimeout(autoTransitionTimer);
+  });
+  
+  nextBtn.addEventListener('mouseleave', () => {
+    if (!track.matches(':hover')) {
+      resetCountdown();
+    }
+  });
+  
+  // Handle touch events for mobile
+  let touchStartX = 0;
+  let touchEndX = 0;
+  
+  track.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+    clearInterval(countdownInterval);
+    clearTimeout(autoTransitionTimer);
+  });
+  
+  track.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+    resetCountdown();
+  });
+  
+  function handleSwipe() {
+    const swipeThreshold = 50;
+    if (touchEndX < touchStartX - swipeThreshold) {
+      // Swipe left - next slide
+      nextSlide();
+    } else if (touchEndX > touchStartX + swipeThreshold) {
+      // Swipe right - previous slide
+      prevSlide();
+    }
+  }
+  
+  // Handle window resize
+  window.addEventListener('resize', () => {
+    // Recalculate visible items
+    const newVisibleItems = Math.max(1, Math.floor(track.offsetWidth / itemWidth));
+    if (newVisibleItems !== visibleItems) {
+      // If visible items changed, update the maxIndex and potentially the currentIndex
+      const newMaxIndex = Math.max(0, items.length - newVisibleItems);
+      currentIndex = Math.min(currentIndex, newMaxIndex);
+      updateCarousel();
+    }
+  });
+  
+  // Initial update
+  updateCarousel();
+});
+
+</script>
+</body>
+</html>
