@@ -195,8 +195,8 @@
 }
 
 .service-card-back {
-  background-color: var(--dark-blue);
-  color: white;
+  background-color: #DBDBDB;
+  color: #2B3F4B;
   transform: rotateY(180deg);
   padding: 20px;
   display: flex;
@@ -334,58 +334,73 @@
     }
     
     /* Testimonials */
+    /* Testimonials */
     .testimonial-section {
       padding: 60px 0;
       background-color: #f8f9fa;
-    }
-    
-    .testimonial-container {
+  }
+  
+  .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+  }
+  
+  .row {
+      display: flex;
+      flex-direction: row; /* Changed to row (normal flow) */
+      flex-wrap: wrap;
+  }
+  
+  .col-md-5 {
+      flex: 0 0 40%;
+      padding: 0 15px;
+  }
+  
+  .col-md-7 {
+      flex: 0 0 60%;
+      padding: 0 15px;
+      position: relative;
+  }
+  
+  h2 {
+      margin-bottom: 1rem;
+      font-size: 2rem;
+  }
+  
+  /* Card Grid */
+  .testimonial-container {
       position: relative;
       overflow: hidden;
       margin-bottom: 20px;
-    }
-    
-    .testimonial-item {
-      display: none;
-      transition: opacity 0.6s ease;
-    }
-    
-    .testimonial-item.active {
-      display: block;
-    }
-    
-    .testimonial-image {
-      width: 100%;
+  }
+  
+  .testimonial-grid {
+      display: flex;
+      transition: transform 0.6s ease;
+      gap: 15px;
+  }
+  
+  .testimonial-item {
+      flex: 0 0 calc(33.333% - 10px);
+      min-width: calc(33.333% - 10px); /* Ensure cards maintain width */
       border-radius: 8px;
+      overflow: hidden;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-    
-    .testimonial-dots .dot {
+  }
+  
+  .testimonial-image {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+  }
+  
+  /* Navigation */
+  .testimonial-arrow {
       cursor: pointer;
-      height: 12px;
-      width: 12px;
-      margin: 0 5px;
-      background-color: #bbb;
-      border-radius: 50%;
-      display: inline-block;
-      transition: background-color 0.6s ease;
-    }
-    
-    .testimonial-dots .dot.active,
-    .testimonial-dots .dot:hover {
-      background-color: #e50000;
-    }
-    
-    .testimonial-arrows {
       position: absolute;
       top: 50%;
-      width: 100%;
       transform: translateY(-50%);
-    }
-    
-    .prev-arrow, .next-arrow {
-      cursor: pointer;
-      position: absolute;
       padding: 10px;
       color: white;
       background-color: #e50000;
@@ -394,19 +409,59 @@
       font-weight: bold;
       font-size: 16px;
       transition: 0.6s ease;
-    }
-    
-    .prev-arrow {
+      z-index: 10;
+  }
+  
+  .prev-arrow {
       left: 10px;
-    }
-    
-    .next-arrow {
+  }
+  
+  .next-arrow {
       right: 10px;
-    }
-    
-    .prev-arrow:hover, .next-arrow:hover {
+  }
+  
+  .prev-arrow:hover, .next-arrow:hover {
       background-color: #c50000;
-    }
+  }
+  
+  /* Dots */
+  .testimonial-dots {
+      text-align: center;
+      margin-top: 20px;
+  }
+  
+  .dot {
+      cursor: pointer;
+      height: 12px;
+      width: 12px;
+      margin: 0 5px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+  }
+  
+  .dot.active,
+  .dot:hover {
+      background-color: #e50000;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+      .row {
+          flex-direction: column; /* Stack on mobile */
+      }
+      
+      .col-md-5, .col-md-7 {
+          flex: 0 0 100%;
+          margin-bottom: 30px;
+      }
+      
+      .testimonial-item {
+          flex: 0 0 calc(100% - 10px);
+          min-width: calc(100% - 10px);
+      }
+  }
     
     /*Gallery section */
     .gallery-section {
@@ -603,12 +658,113 @@
       100% { transform: translateX(-50%); }
     }
     
-    /* Smaller event images */
-    #eventsCarousel .carousel-item img {
-      max-height: 400px;
-      width: auto;
-      margin: 0 auto;
-    }
+    /*  Event */
+    .event-card {
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      margin-bottom: 40px;
+      display: flex;
+      flex-direction: row;
+  }
+  
+  .event-image {
+      width: 830px;
+      height: 942px;
+      object-fit: cover;
+      background-color: #f8f9fa;
+  }
+  
+  .event-details {
+      width: 50%;
+      padding: 40px;
+      background-color: #e50000;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+  }
+  
+  .event-date {
+      font-size: 4rem;
+      font-weight: 700;
+      line-height: 1;
+      margin-bottom: 5px;
+  }
+  
+  .event-month {
+      font-size: 1.2rem;
+      font-weight: 500;
+      margin-bottom: 30px;
+      text-transform: uppercase;
+  }
+  
+  .event-title {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 15px;
+  }
+  
+  .event-description {
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+      opacity: 0.9;
+  }
+  
+  .event-time, .event-location {
+      font-size: 1rem;
+      margin-bottom: 8px;
+  }
+  
+  .register-btn {
+      background-color: white;
+      color: #333;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 4px;
+      font-weight: 600;
+      margin-top: 20px;
+      transition: all 0.3s ease;
+  }
+  
+  .register-btn:hover {
+      background-color: #f8f9fa;
+      transform: translateY(-2px);
+  }
+  
+  .section-heading {
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #333;
+  }
+  
+  .section-description {
+      color: #6c757d;
+      max-width: 700px;
+      margin: 0 auto 40px;
+      text-align: center;
+  }
+  
+  .heading-underline {
+      width: 200px;
+      height: 3px;
+      background-color: #e50000;
+      margin: 5px auto 25px;
+  }
+  
+  @media (max-width: 768px) {
+      .event-card {
+          flex-direction: column;
+      }
+      
+      .event-image, .event-details {
+          width: 100%;
+      }
+      
+      .event-image {
+          height: 200px;
+      }
+  }
     
     /* Footer */
     .footer {
@@ -716,7 +872,7 @@
       <div class="col-lg-6">
         <h1>From Tech Solutions to International Impact, We've Got You Covered.</h1>
         <p>Learn tech, explore top courses, land internships, and ace global exams like IELTS, SAT, TOEFL, and GRE with expert guidance.<br><br>
-          Want to ace your IELTS, SAT, or TOEFL?</p>
+          Want to ace your IELTS, SAT, TOEFL, or GRE?</p>
         <a href="https://docs.google.com/forms/d/1zlurl4ltiDzKLo200-oU5IOg15JgnqujFexC2g9WSsg/edit" class="btn btn-primary btn-lg rounded-pill">Register now</a>
       </div>
       
@@ -769,7 +925,7 @@
   <!-- Services Section -->
 <section id="services" class="services-section py-5">
   <div class="container">
-    <h2 class="text-center">Our Services</h2>
+    <h2 class="text-center"><b>Our Services</b></h2>
     <p class="text-center mb-5">We provide comprehensive tech training and support to empower Africa's next generation of IT professionals</p>
     
     <div class="row">
@@ -778,7 +934,7 @@
         <div class="service-card">
           <div class="service-card-inner">
             <div class="service-card-front">
-              <img src="./assets/INT_EXAMS.gif" alt="International Exams">
+              <img src="./assets/services/INT_EXAMS.JPG" alt="International Exams">
               <h4>International Exams</h4>
               <!-- Flip button will be added by JavaScript for touch devices -->
             </div>
@@ -800,7 +956,7 @@
         <div class="service-card">
           <div class="service-card-inner">
             <div class="service-card-front">
-              <img src="./assets/TECH_COURSES.gif" alt="Tech Courses">
+              <img src="./assets/services/TECH_COURSES.JPG" alt="Tech Courses">
               <h4>Tech Courses</h4>
               <!-- Flip button will be added by JavaScript for touch devices -->
             </div>
@@ -823,7 +979,7 @@
         <div class="service-card">
           <div class="service-card-inner">
             <div class="service-card-front">
-              <img src="./assets/WORKSHOP.gif" alt="Tech Workshop">
+              <img src="./assets/services/TECH_WORKSHOP.JPG" alt="Tech Workshop">
               <h4>Tech Workshop</h4>
               <!-- Flip button will be added by JavaScript for touch devices -->
             </div>
@@ -845,7 +1001,7 @@
         <div class="service-card">
           <div class="service-card-inner">
             <div class="service-card-front">
-              <img src="./assets/TALENT.gif" alt="Talent Recruitment">
+              <img src="./assets/services/TALENT_RECRUITMENT.JPG" alt="Talent Recruitment">
               <h4>Talent Recruitment</h4>
               <!-- Flip button will be added by JavaScript for touch devices -->
             </div>
@@ -866,64 +1022,65 @@
 </section>
 
   <!-- Testimonials Section -->
-<section id="testimonials" class="testimonial-section">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-5">
-        <h2 class="mb-4">Testimonials & Success Stories</h2>
-        <p>Discover how our programs have transformed careers and lives. Our graduates have gone on to work at top companies and launch successful businesses in tech.</p>
-      </div>
-      
-      <div class="col-md-7 position-relative">
-        <div class="testimonial-container">
-          
-          <!-- Testimonial Item 1 -->
-          <div class="testimonial-item active" id="testimonial1">
-            <img src="./assets/Testimonials/Artboard 2.jpg" alt="Student 1" class="img-fluid testimonial-image" style="max-height: 400px; width: auto; max-width: 100%;">
-          </div>
-          
-          <!-- Testimonial Item 2 -->
-          <div class="testimonial-item" id="testimonial2">
-            <img src="./assets/Testimonials/Artboard 2 copy.jpg" alt="Student2" class="img-fluid testimonial-image" style="max-height: 400px; width: auto; max-width: 100%;">
-          </div>
-
-          <!-- Testimonial Item 3 -->
-          <div class="testimonial-item" id="testimonial3">
-            <img src="./assets/Testimonials/Artboard 2 copy 2.jpg" alt="Student 3" class="img-fluid testimonial-image" style="max-height: 400px; width: auto; max-width: 100%;">
-          </div>
-
-          <!-- Testimonial Item 4 -->
-          <div class="testimonial-item" id="testimonial4">
-            <img src="./assets/Testimonials//Artboard 2 copy 3.jpg" alt="Student 4" class="img-fluid testimonial-image" style="max-height: 400px; width: auto; max-width: 100%;">
-          </div>
-
-          <!-- Testimonial Item 5 -->
-          <div class="testimonial-item" id="testimonial5">
-            <img src="./assets/Testimonials/Artboard 2 copy 4.jpg" alt="Student 5" class="img-fluid testimonial-image" style="max-height: 400px; width: auto; max-width: 100%;">
-          </div>
-
-          <!-- Testimonial Item 7 -->
-          <div class="testimonial-item" id="testimonial6">
-            <img src="./assets/Testimonials/Artboard 2 copy 5.jpg" alt="Student 6" class="img-fluid testimonial-image" style="max-height: 400px; width: auto; max-width: 100%;">
-          </div>
-          
-          <!-- Navigation Arrows - Now inside the container -->
-          <button class="testimonial-arrow prev-arrow" onclick="changeTestimonial(-1)">&#10094;</button>
-          <button class="testimonial-arrow next-arrow" onclick="changeTestimonial(1)">&#10095;</button>
+  <section id="testimonials" class="testimonial-section">
+    <div class="container">
+        <div class="row">
+            <!-- Left column: Heading and intro text -->
+            <div class="col-md-5">
+                <h2 class="mb-4"><b>Testimonials & Success Stories</b></h2>
+                <p>Discover how our programs have transformed careers and lives. Our graduates have gone on to work at top companies and launch successful businesses in tech.</p>
+            </div>
+            
+            <!-- Right column: Testimonial cards -->
+            <div class="col-md-7">
+                <div class="testimonial-container">
+                    <div class="testimonial-grid" id="testimonialGrid">
+                        <!-- Testimonial Item 1 -->
+                        <div class="testimonial-item">
+                            <img src="./assets/Testimonials/Artboard 2.jpg" alt="Student 1" class="testimonial-image">
+                        </div>
+                        
+                        <!-- Testimonial Item 2 -->
+                        <div class="testimonial-item">
+                            <img src="./assets/Testimonials/Artboard 2 copy 2.jpg" alt="Student 2" class="testimonial-image">
+                        </div>
+                        
+                        <!-- Testimonial Item 3 -->
+                        <div class="testimonial-item">
+                            <img src="./assets/Testimonials/Artboard 2 copy 3.jpg" alt="Student 3" class="testimonial-image">
+                        </div>
+                        
+                        <!-- Testimonial Item 4 -->
+                        <div class="testimonial-item">
+                            <img src="./assets/Testimonials/Artboard 2 copy 4.jpg" alt="Student 4" class="testimonial-image">
+                        </div>
+                        
+                        <!-- Testimonial Item 5 -->
+                        <div class="testimonial-item">
+                            <img src="./assets/Testimonials/Artboard 2 copy 5.jpg" alt="Student 5" class="testimonial-image">
+                        </div>
+                        
+                        <!-- Testimonial Item 6 -->
+                        <div class="testimonial-item">
+                            <img src="./assets/Testimonials/Artboard 2 copy.jpgs" alt="Student 6" class="testimonial-image">
+                        </div>
+                    </div>
+                    
+                    <!-- Navigation Arrows -->
+                    <button class="testimonial-arrow prev-arrow" onclick="scrollTestimonials(-1)">&#10094;</button>
+                    <button class="testimonial-arrow next-arrow" onclick="scrollTestimonials(1)">&#10095;</button>
+                </div>
+                
+                <!-- Testimonial Navigation Dots -->
+                <div class="testimonial-dots">
+                    <span class="dot active" onclick="jumpToPage(0)"></span>
+                    <span class="dot" onclick="jumpToPage(1)"></span>
+                    <span class="dot" onclick="jumpToPage(2)"></span>
+                    <span class="dot" onclick="jumpToPage(3)"></span>
+                </div>
+            </div>
         </div>
-        
-        <!-- Testimonial Navigation Dots -->
-        <div class="testimonial-dots text-center mt-4">
-          <span class="dot active" onclick="currentTestimonial(1)"></span>
-          <span class="dot" onclick="currentTestimonial(2)"></span>
-          <span class="dot" onclick="currentTestimonial(3)"></span>
-          <span class="dot" onclick="currentTestimonial(4)"></span>
-          <span class="dot" onclick="currentTestimonial(5)"></span>
-          <span class="dot" onclick="currentTestimonial(6)"></span>
-        </div>
-      </div>
     </div>
-  </div>
 </section>
 
 <!-- Gallery Section -->
@@ -931,7 +1088,7 @@
   <div class="container">
     <div class="row mb-4">
       <div class="col-md-6">
-        <h2 class="mb-3">Our Gallery</h2>
+        <h2 class="mb-3"><b>Our Gallery</b></h2>
         <p>Explore our vibrant campus life, state-of-the-art facilities, and the exciting journey of our students through their educational experience.</p>
       </div>
       <!--<div class="col-md-6 text-end d-flex align-items-center justify-content-end">
@@ -940,8 +1097,25 @@
         </div>
       </div>-->
     </div>
-    
     <div class="gallery-carousel-container position-relative">
+      <!-- Move navigation buttons outside the track -->
+      <button class="gallery-nav prev-btn">
+        <svg class="animal-arrow" viewBox="0 0 24 24" width="40" height="40">
+          <!-- Stylized fox/wolf-like arrow pointing left -->
+          <path d="M15,6L9,12L15,18" stroke="#333" stroke-width="2" fill="none" />
+          <path d="M13,4C10,8 7,10 5,12C7,14 10,16 13,20" stroke="#333" stroke-width="1.5" fill="none" />
+          <circle cx="17" cy="8" r="1" fill="#333" /> <!-- Eye -->
+        </svg>
+      </button>
+      <button class="gallery-nav next-btn">
+        <svg class="animal-arrow" viewBox="0 0 24 24" width="40" height="40">
+          <!-- Stylized fox/wolf-like arrow pointing right -->
+          <path d="M9,6L15,12L9,18" stroke="#333" stroke-width="2" fill="none" />
+          <path d="M11,4C14,8 17,10 19,12C17,14 14,16 11,20" stroke="#333" stroke-width="1.5" fill="none" />
+          <circle cx="7" cy="8" r="1" fill="#333" /> <!-- Eye -->
+        </svg>
+      </button>
+
       <!-- Animal-themed carousel track -->
       <div class="gallery-track">
         <div class="gallery-item">
@@ -980,25 +1154,8 @@
           <img src="./assets/gallery/goup.png" alt="Coding Workshop" class="img-fluid rounded shadow">
           <!--<div class="gallery-caption">Hands-on Learning Workshops</div>-->
         </div>
-      
-      <!-- Custom animal-themed navigation -->
-      <button class="gallery-nav prev-btn">
-        <svg class="animal-arrow" viewBox="0 0 24 24" width="40" height="40">
-          <!-- Stylized fox/wolf-like arrow pointing left -->
-          <path d="M15,6L9,12L15,18" stroke="#333" stroke-width="2" fill="none" />
-          <path d="M13,4C10,8 7,10 5,12C7,14 10,16 13,20" stroke="#333" stroke-width="1.5" fill="none" />
-          <circle cx="17" cy="8" r="1" fill="#333" /> <!-- Eye -->
-        </svg>
-      </button>
-      <button class="gallery-nav next-btn">
-        <svg class="animal-arrow" viewBox="0 0 24 24" width="40" height="40">
-          <!-- Stylized fox/wolf-like arrow pointing right -->
-          <path d="M9,6L15,12L9,18" stroke="#333" stroke-width="2" fill="none" />
-          <path d="M11,4C14,8 17,10 19,12C17,14 14,16 11,20" stroke="#333" stroke-width="1.5" fill="none" />
-          <circle cx="7" cy="8" r="1" fill="#333" /> <!-- Eye -->
-        </svg>
-      </button>
-      
+      </div>
+
       <!-- Paw print indicators -->
       <div class="gallery-indicators">
         <span class="paw-print active" data-index="0"></span>
@@ -1010,7 +1167,6 @@
         <span class="paw-print" data-index="6"></span>
         <span class="paw-print" data-index="7"></span>
         <span class="paw-print" data-index="8"></span>
-        <span class="paw-print" data-index="9"></span>
       </div>
     </div>
   </div>
@@ -1019,7 +1175,7 @@
   <!-- Partners Section -->
   <section class="py-5">
     <div class="container">
-      <h2 class="text-center mb-4">Our Partners</h2>
+      <h2 class="text-center mb-4"><b>Our Partners</b></h2>
       <div class="logo-carousel mb-5">
         <div class="logo-row">
           <img src="./assets/partners/XDEPUTY.png" alt="Partner 1" class="mx-3">
@@ -1059,79 +1215,29 @@
   <!-- Events Section -->
   <section class="py-5">
     <div class="container">
-      <h2 class="text-center mb-4">Upcoming Events</h2>
-      <div id="eventsCarousel" class="carousel slide mb-5" data-bs-ride="carousel" data-bs-interval="5000">
-        <!-- Carousel indicators -->
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#eventsCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Event 1"></button>
-          <button type="button" data-bs-target="#eventsCarousel" data-bs-slide-to="1" aria-label="Event 2"></button>
-          <button type="button" data-bs-target="#eventsCarousel" data-bs-slide-to="2" aria-label="Event 3"></button>
-        </div>
+        <h2 class="text-center section-heading"><b>UPCOMING EVENTS</b></h2>
+        <div class="heading-underline"></div>
+        <p class="section-description">Be a part of brainstorming sessions, build professional relationships and gain actionable insights from thought leaders & renowned experts.</p>
         
-        <!-- Carousel items -->
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="d-flex justify-content-center">
-              <img src="./assets/img/projects/abr.jpg" alt="AI Workshop Flyer" style="max-height: 400px; width: auto; max-width: 100%;">
+        <div class="event-card">
+            <img src="./assets/img/robotics.JPG" alt="Modern Building Architecture" class="event-image">
+            <div class="event-details">
+                <div class="event-date">26</div>
+                <div class="event-month">APRIL</div>
+                <h4 class="event-title">From Concept to Creation (C-2-C)</h4>
+                <p class="event-description">The Robotic Journey: From Concept to Creation (C-2-C) is an immersive, hands-on workshop designed to bring together tech enthusiasts, engineers, and industry leaders to explore the latest advancements in robotics, AI, and hardware engineering.</p>
+                <div class="event-time">11:00 AM - 5:00 PM</div>
+                <div class="event-location">JMTech Centre, Ikun-Ekiti</div>
+                <button class="register-btn">REGISTER NOW</button>
             </div>
-            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded p-2" style="bottom: 10px; left: 50%; transform: translateX(-50%); width: auto;">
-              <h5>AI Workshop</h5>
-              <p>Join our intensive 2-day workshop on practical AI applications</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="d-flex justify-content-center">
-              <img src="./assets/img/projects/abr.jpg" alt="Blockchain Seminar Flyer" style="max-height: 400px; width: auto; max-width: 100%;">
-            </div>
-            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded p-2" style="bottom: 10px; left: 50%; transform: translateX(-50%); width: auto;">
-              <h5>Blockchain Technology Seminar</h5>
-              <p>Learn about the latest developments in blockchain and cryptocurrency</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="d-flex justify-content-center">
-              <img src="./assets/img/projects/abr.jpg" alt="Digital Marketing Bootcamp Flyer" style="max-height: 400px; width: auto; max-width: 100%;">
-            </div>
-            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded p-2" style="bottom: 10px; left: 50%; transform: translateX(-50%); width: auto;">
-              <h5>Digital Marketing Bootcamp</h5>
-              <p>Master the art of digital marketing in our intensive bootcamp</p>
-            </div>
-          </div>
         </div>
-        
-        <!-- Carousel controls -->
-        <button class="carousel-control-prev" type="button" data-bs-target="#eventsCarousel" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#eventsCarousel" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
-      
-      <!-- View more events button -->
-      <div class="text-center">
-        <a href="#" class="btn btn-primary">Check for more events</a>
-      </div>
-      
-      <!-- Countdown Box -->
-      <div class="countdown-box text-center mt-4">
-        <h2>Next Training Event</h2>
-        <div class="d-flex justify-content-center gap-4">
-          <div><span id="days">00</span> Days</div>
-          <div><span id="hours">00</span> Hours</div>
-          <div><span id="minutes">00</span> Minutes</div>
-          <div><span id="seconds">00</span> Seconds</div>
-        </div>
-      </div>
     </div>
   </section>
 
   <!-- Blog Section -->
   <section id="blog" class="py-5">
     <div class="container">
-      <h2 class="text-center mb-5">Recent Blogs</h2>
+      <h2 class="text-center mb-5"><b>Recent Blogs</b></h2>
       <div class="overflow-hidden">
         <div class="d-flex blog-slider">
           <div class="card mx-3" style="min-width: 300px;">
@@ -1169,7 +1275,7 @@
   <!-- FAQ Section -->
   <section class="py-5 bg-light">
     <div class="container">
-      <h2 class="text-center mb-5">FAQs</h2>
+      <h2 class="text-center mb-5"><b>FAQs</b></h2>
       <div class="accordion" id="faqAccordion">
         <div class="accordion-item">
           <h2 class="accordion-header">
@@ -1242,7 +1348,7 @@
   <div class="container">
     <div class="row">
       <div class="col-12 text-center mb-4">
-        <h2>Subscribe to Our Newsletter</h2>
+        <h2><b>Subscribe to Our Newsletter</b></h2>
         <p class="lead">Stay updated with our latest courses, events, and tech insights</p>
       </div>
     </div>
@@ -1296,7 +1402,7 @@
   <!-- Contact Section -->
   <section id="contact" class="py-5">
     <div class="container">
-      <h2 class="text-center mb-5">Contact Us</h2>
+      <h2 class="text-center mb-5"><b>Send us a message</b></h2>
       <div class="row">
         <div class="col-md-6">
           <form>
@@ -1367,59 +1473,71 @@
         }
     }, 1000);
 
-    //Testimonials
-    let testimonialIndex = 1;
-    let slideInterval;
+    // Testimonial grid scrolling
+    let currentPage = 0;
+    const itemsPerPage = 3; // Number of visible items per view
+    const totalItems = document.querySelectorAll('.testimonial-item').length;
+    const maxPage = Math.ceil(totalItems / itemsPerPage) - 1;
+    let autoScrollInterval;
     
-    // Auto slide every 5 seconds
-    function startAutoSlide() {
-      slideInterval = setInterval(() => {
-        changeTestimonial(1);
-      }, 5000);
-    }
-    
-    // Show current testimonial
-    function showTestimonial(n) {
-      const testimonials = document.getElementsByClassName("testimonial-item");
-      const dots = document.getElementsByClassName("dot");
-      
-      if (n > testimonials.length) {
-        testimonialIndex = 1;
-      }
-      if (n < 1) {
-        testimonialIndex = testimonials.length;
-      }
-      
-      // Hide all testimonials
-      for (let i = 0; i < testimonials.length; i++) {
-        testimonials[i].classList.remove("active");
-        dots[i].classList.remove("active");
-      }
-      
-      // Show the current testimonial
-      testimonials[testimonialIndex - 1].classList.add("active");
-      dots[testimonialIndex - 1].classList.add("active");
-    }
-    
-    // Change testimonial
-    function changeTestimonial(n) {
-      clearInterval(slideInterval);
-      showTestimonial(testimonialIndex += n);
-      startAutoSlide();
-    }
-    
-    // Set current testimonial
-    function currentTestimonial(n) {
-      clearInterval(slideInterval);
-      showTestimonial(testimonialIndex = n);
-      startAutoSlide();
-    }
-    
-    // Initialize the slider
+    // Initialize
     document.addEventListener("DOMContentLoaded", function() {
-      showTestimonial(testimonialIndex);
-      startAutoSlide();
+        updateGrid();
+        startAutoScroll();
     });
+    
+    // Start auto scrolling
+    function startAutoScroll() {
+        autoScrollInterval = setInterval(() => {
+            scrollTestimonials(1);
+        }, 5000);
+    }
+    
+    // Scroll testimonials left or right
+    function scrollTestimonials(direction) {
+        clearInterval(autoScrollInterval);
+        
+        currentPage += direction;
+        
+        // Loop back to first or last page if needed
+        if (currentPage < 0) {
+            currentPage = maxPage;
+        } else if (currentPage > maxPage) {
+            currentPage = 0;
+        }
+        
+        updateGrid();
+        updateDots();
+        startAutoScroll();
+    }
+    
+    // Jump to a specific page
+    function jumpToPage(pageNum) {
+        clearInterval(autoScrollInterval);
+        currentPage = pageNum;
+        updateGrid();
+        updateDots();
+        startAutoScroll();
+    }
+    
+    // Update grid position
+    function updateGrid() {
+        const grid = document.getElementById('testimonialGrid');
+        const scrollAmount = -1 * currentPage * (100 / itemsPerPage);
+        grid.style.transform = `translateX(${scrollAmount}%)`;
+    }
+    
+    // Update active dot
+    function updateDots() {
+        const dots = document.querySelectorAll('.dot');
+        dots.forEach((dot, index) => {
+            if (index === currentPage) {
+                dot.classList.add('active');
+            } else {
+                dot.classList.remove('active');
+            }
+        });
+    }
 
     // Add this script at the end of your HTML, right before the closing </body> tag
 document.addEventListener('DOMContentLoaded', function() {
