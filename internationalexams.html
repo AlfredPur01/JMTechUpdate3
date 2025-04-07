@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>International Exams | JM Tech Centre</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
+    <!-- AOS Animation Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <style>
+        @font-face {
+            font-family: 'Khula-Regular';
+            src: url('fonts/Khula-Regular.ttf') format('truetype');
+        }
+        @font-face {
+            font-family: 'Khula-SemiBold';
+            src: url('fonts/Khula-SemiBold.ttf') format('truetype');
+        }
+        @font-face {
+            font-family: 'Khula-ExtraBold';
+            src: url('fonts/Khula-ExtraBold.ttf') format('truetype');
+        }
+
+        :root {
+            --primary-color: #e50000;
+            --white: #ffffff;
+            --light-gray: #DBDBDB;
+            --dark-blue: #2B3F4B;
+        }
+
+        body {
+            font-family: 'Khula-Regular', sans-serif;
+            color: #333;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Khula-ExtraBold', sans-serif;
+        }
+
+        h4, h5, .nav-link, .btn {
+            font-family: 'Khula-SemiBold', sans-serif;
+        }
+
+        /* Navbar styles */
+    .navbar {
+        padding: 15px 0;
+        background-color: white;
+      }
+      
+      .navbar-brand img {
+        max-height: 70px; /* Increased logo size */
+      }
+      
+      .nav-link {
+        color: #000;
+        font-weight: 500;
+        margin: 0 10px;
+        position: relative;
+      }
+      
+      .nav-link.active {
+        color: var(--primary-color);
+        border-bottom: 3px solid var(--primary-color);
+      }
+
+        /* Hero section */
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('./assets/services/INT_EXAMS.JPG') center/cover no-repeat;
+            color: var(--white);
+            padding: 150px 0;
+            text-align: center;
+        }
+
+        .hero-section h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero-section p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            padding: 10px 25px;
+            border-radius: 30px;
+            transition: all 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #cc0000;
+            border-color: #cc0000;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(229, 0, 0, 0.3);
+        }
+
+        /* About Exams Section */
+        .about-exams {
+            padding: 80px 0;
+        }
+
+        .about-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            height: 100%;
+            transition: transform 0.3s;
+        }
+
+        .about-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .about-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .about-card-body {
+            padding: 25px;
+        }
+
+        .about-card-body h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        /* Registration Fees Table */
+        .fees-section {
+            background-color: var(--light-gray);
+            padding: 80px 0;
+        }
+
+        .table-responsive {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .table {
+            margin-bottom: 0;
+        }
+
+        .table thead {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        .table thead th {
+            font-family: 'Khula-SemiBold', sans-serif;
+            border: none;
+            padding: 15px;
+        }
+
+        .table tbody tr:nth-child(even) {
+            background-color: rgba(219, 219, 219, 0.3);
+        }
+
+        .table tbody td {
+            padding: 12px 15px;
+            vertical-align: middle;
+        }
+
+        /* Tutorial Fees Table */
+        .tutorial-section {
+            padding: 80px 0;
+        }
+
+        /* Study Materials */
+        .materials-section {
+            background-color: var(--light-gray);
+            padding: 80px 0;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 0;
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('./assets/services/INT_EXAMS.JPG') center/cover no-repeat;
+            color: var(--white);
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .cta-buttons .btn {
+            margin: 0 10px;
+        }
+
+        .btn-outline-light {
+            border-radius: 30px;
+            padding: 10px 25px;
+            transition: all 0.3s;
+        }
+
+        .btn-outline-light:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+        }
+
+        /* Updated Footer styling */
+footer {
+    background-color: #000000; /* Changed from var(--dark-blue) to black */
+    color: var(--white);
+    padding: 60px 0 30px;
+}
+
+/* The rest of the footer styles remain the same */
+.footer-brand {
+    font-family: 'Khula-ExtraBold', sans-serif;
+    font-size: 1.8rem;
+    color: var(--white);
+    margin-bottom: 20px;
+    display: block;
+}
+
+.footer-links h5 {
+    color: var(--white);
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-links h5::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background-color: var(--primary-color);
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: var(--light-gray);
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--primary-color);
+    padding-left: 5px;
+}
+
+.social-icons {
+    margin-top: 20px;
+}
+
+.social-icons a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    margin-right: 10px;
+    text-align: center;
+    line-height: 40px;
+    color: var(--white);
+    transition: all 0.3s;
+}
+
+.social-icons a:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 30px;
+    margin-top: 30px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="./assets/newlogo.png" alt="JM Tech Centre Logo" class="logo">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="./index.html">Home</a>
+          </li>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div data-aos="fade-up" data-aos-duration="1000">
+                <h1>International Exams</h1>
+                <p>Prepare for global success with our comprehensive international exam preparation services, registration assistance, and study materials.</p>
+                <a href="https://docs.google.com/forms/d/1zlurl4ltiDzKLo200-oU5IOg15JgnqujFexC2g9WSsg/edit" class="btn btn-primary">Register Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Exams Section -->
+    <section class="about-exams">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 data-aos="fade-up"><b>Why Choose Our Exam Services</b></h2>
+                <p data-aos="fade-up" data-aos-delay="100">We provide complete support for your international exam journey</p>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="about-card">
+                        <img src="./assets/services/certification.jpg" alt="Certification Preparation">
+                        <div class="about-card-body">
+                            <h3>Certification Preparation</h3>
+                            <p>Comprehensive preparation courses with experienced instructors who understand the exam patterns and requirements.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="about-card">
+                        <img src="./assets/services/facilitiy.jpg" alt="Exam Center Facilities">
+                        <div class="about-card-body">
+                            <h3>Exam Center Facilities</h3>
+                            <p>State-of-the-art exam facilities that meet international standards for a comfortable testing experience.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="about-card">
+                        <img src="./assets/services/registration.jpg" alt="Registration Assistance">
+                        <div class="about-card-body">
+                            <h3>Registration Assistance</h3>
+                            <p>Expert guidance through the entire registration process, ensuring all requirements are met for your exam.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Fees Section -->
+    <section id="registration" class="fees-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 data-aos="fade-up"><b> Exam Registration Fees</b></h2>
+                <p data-aos="fade-up" data-aos-delay="100">All registrations include free e-books and study materials</p>
+            </div>
+            <div class="table-responsive" data-aos="fade-up" data-aos-delay="200">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Examination/Test Name</th>
+                            <th>Registration Fee</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>TOEFL (Registration Fee)</td>
+                            <td>$182</td>
+                        </tr>
+                        <tr>
+                            <td>GRE (Registration Fee)</td>
+                            <td>$231.30</td>
+                        </tr>
+                        <tr>
+                            <td>GRE Subject Test</td>
+                            <td>$189.50</td>
+                        </tr>
+                        <tr>
+                            <td>GMAT</td>
+                            <td>$300.00</td>
+                        </tr>
+                        <tr>
+                            <td>GMAT (Home Edition)</td>
+                            <td>$310.00</td>
+                        </tr>
+                        <tr>
+                            <td>ACT WITHOUT ESSAY</td>
+                            <td>$210.00</td>
+                        </tr>
+                        <tr>
+                            <td>ACT WITH ESSAY</td>
+                            <td>$230.00</td>
+                        </tr>
+                        <tr>
+                            <td>SAT</td>
+                            <td>$120</td>
+                        </tr>
+                        <tr>
+                            <td>PTE</td>
+                            <td>$170.00</td>
+                        </tr>
+                        <tr>
+                            <td>PTE UKVI</td>
+                            <td>$170.00</td>
+                        </tr>
+                        <tr>
+                            <td>IDP IELTS</td>
+                            <td>N270,000.00</td>
+                        </tr>
+                        <tr>
+                            <td>IDP IELTS [UKVI]</td>
+                            <td>N290,000.00</td>
+                        </tr>
+                        <tr>
+                            <td>IDP IELTS [LIFE SKILL]</td>
+                            <td>N255,000.00</td>
+                        </tr>
+                        <tr>
+                            <td>DUOLINGO [ENGLISH]</td>
+                            <td>$75.00</td>
+                        </tr>
+                        <tr>
+                            <td>BRITISH COUNCIL [ IELTS]</td>
+                            <td>N290,000.00</td>
+                        </tr>
+                        <tr>
+                            <td>SELT [TWO SKILLS]</td>
+                            <td>$200.00</td>
+                        </tr>
+                        <tr>
+                            <td>SELT [FOUR SKILLS]</td>
+                            <td>$260.00</td>
+                        </tr>
+                        <tr>
+                            <td>IELTS UKVI</td>
+                            <td>N291,000.00</td>
+                        </tr>
+                        <tr>
+                            <td>IELTS LIFE SKILLS</td>
+                            <td>N259,000.00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tutorial Fees Section -->
+    <section class="tutorial-section" id="tutorial-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 data-aos="fade-up"> <b>Tutorial Fees</b></h2>
+                <p data-aos="fade-up" data-aos-delay="100">All tutorials include online simulation tests</p>
+            </div>
+            <div class="table-responsive" data-aos="fade-up" data-aos-delay="200">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Examination/Test</th>
+                            <th>Duration</th>
+                            <th>Tutorial Fee</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>TOEFL</td>
+                            <td>Four (4) weeks (weekday module) - 2 days per week</td>
+                            <td>N30,000.00</td>
+                        </tr>
+                        <tr>
+                            <td>GRE</td>
+                            <td>Six (6) weeks (weekday module) - 2 days per week<br>Morning and evening section</td>
+                            <td>N40,000.00</td>
+                        </tr>
+                        <tr>
+                            <td>GMAT</td>
+                            <td>Six (6) weeks (weekday module) - 2 days per week<br>Morning and evening section</td>
+                            <td>N40,000.00</td>
+                        </tr>
+                        <tr>
+                            <td>SAT</td>
+                            <td>Six (6) weeks (weekday module) - 2 days per week<br>Morning and evening section</td>
+                            <td>N40,000.00</td>
+                        </tr>
+                        <tr>
+                            <td>IELTS</td>
+                            <td>Four (4) weeks (weekday module) - 2 days per week<br>Morning and evening section</td>
+                            <td>N30,000.00</td>
+                        </tr>
+                        <tr>
+                            <td>PTE</td>
+                            <td>Four (4) weeks (weekday module) - 2 days per week<br>Morning and evening section</td>
+                            <td>N40,000.00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Study Materials Section -->
+    <section class="materials-section" id="materials-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 data-aos="fade-up"> <b>Study Materials</b></h2>
+                <p data-aos="fade-up" data-aos-delay="100">Latest editions of official study guides and practice materials</p>
+            </div>
+            <div class="table-responsive" data-aos="fade-up" data-aos-delay="200">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Study Material</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Latest official study guide for TOEFL iBT, Latest edition</td>
+                            <td>N20,000.00</td>
+                        </tr>
+                        <tr>
+                            <td>Latest official study guide for the new/revised GRE, Latest edition</td>
+                            <td>N20,000.00</td>
+                        </tr>
+                        <tr>
+                            <td>Official GRE Super Power Pack (Official Study Guide + Quantitative and Verbal Practice Questions & Answers)</td>
+                            <td>N20,000.00</td>
+                        </tr>
+                        <tr>
+                            <td>Latest Official Study Guide GMAT, Latest edition</td>
+                            <td>N20,000.00</td>
+                        </tr>
+                        <tr>
+                            <td>The Official SAT Study Guide 4 Practice Tests - Latest Edition</td>
+                            <td>N20,000.00</td>
+                        </tr>
+                        <tr>
+                            <td>The Official SAT Study Guide 8 Practice Tests - Latest Edition</td>
+                            <td>N25,000.00</td>
+                        </tr>
+                        <tr>
+                            <td>PTE Official Study Guide</td>
+                            <td>N20,000.00</td>
+                        </tr>
+                        <tr>
+                            <td>KAPLAN Study Guide for TOEFL, Latest Edition</td>
+                            <td>N15,000.00</td>
+                        </tr>
+                        <tr>
+                            <td>KAPLAN Study Guide for GRE, Latest Edition</td>
+                            <td>N15,000.00</td>
+                        </tr>
+                        <tr>
+                            <td>Official GRE Quantitative Reasoning, (150)Practice Questions, Latest Edition</td>
+                            <td>N10,000.00</td>
+                        </tr>
+                        <tr>
+                            <td>Official GRE Verbal Reasoning, (150)Practice Questions, Latest Edition</td>
+                            <td>N10,000.00</td>
+                        </tr>
+                        <tr>
+                            <td>BARRON IELTS STUDY GUIDE (ACADEMIC & GENERAL)</td>
+                            <td>N15,000.00</td>
+                        </tr>
+                        <tr>
+                            <td>CRACKING THE GMAT (THE PRINCETON REVIEW) Latest Edition</td>
+                            <td>N12,500.00</td>
+                        </tr>
+                        <tr>
+                            <td>CRACKING THE GRE (THE PRINCETON REVIEW) Latest Edition</td>
+                            <td>N12,500.00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div data-aos="fade-up">
+                <h2>Ready to Excel in Your International Exams?</h2>
+                <p>Join thousands of successful students who have achieved their target scores through our comprehensive exam preparation services.</p>
+                <div class="cta-buttons">
+                    <a href="https://docs.google.com/forms/d/1zlurl4ltiDzKLo200-oU5IOg15JgnqujFexC2g9WSsg/edit" class="btn btn-primary">Register for an Exam</a>
+                    <a href="https://docs.google.com/forms/d/1zlurl4ltiDzKLo200-oU5IOg15JgnqujFexC2g9WSsg/edit" class="btn btn-outline-light">Enroll in a Tutorial Class</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <a href="#" class="footer-brand">JM Tech Centre</a>
+                    <p>Comprehensive preparation, registration assistance, and study materials to launch your global success. JMTech Centre has you covered.</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/jmtechcenter/"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://x.com/jmtechcentre?s=21"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/jmtechcentre?igsh=MXN4dThrOXkwa2lpdA=="><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/company/jm-tech-centre/"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <div class="footer-links">
+                        <h5>Services</h5>
+                        <ul>
+                            <li><a href="#">International Exams</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <div class="footer-links">
+                        <h5>Resources</h5>
+                        <ul>
+                            <li><a href="#materials-section">Study Materials</a></li>
+                            <li><a href="#tutorial-section">Tutorials</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 mb-4">
+                    <div class="footer-links">
+                        <h5>Contact Us</h5>
+                        <ul>
+                            <li><i class="fas fa-map-marker-alt me-2"></i> JMTech Centre, Ikun-Ekiti, Nigeria</li>
+                            <li><i class="fas fa-phone me-2"></i> +23480 6835 2353 or  +23470 1314 3358</li>
+                            <li><i class="fas fa-envelope me-2"></i> skillslab@jmtechcentre.org</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 JM Tech Centre. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap and jQuery Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        // Initialize AOS animation
+        AOS.init({
+            once: true,
+            offset: 100,
+            duration: 800
+        });
+
+        // Add scroll class to navbar
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 50) {
+                $('.navbar').addClass('shadow-sm');
+            } else {
+                $('.navbar').removeClass('shadow-sm');
+            }
+        });
+    </script>
+</body>
+</html>

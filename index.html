@@ -135,8 +135,8 @@
       left: 10px;
     }
     
-    /* Services Section (previously "Focus areas") */
-    /* Service Cards Styling */
+    
+    /* Our Service Cards Styling */
 .service-card {
   perspective: 1000px;
   height: 300px;
@@ -334,69 +334,74 @@
     }
     
     /* Testimonials */
-    /* Testimonials */
     .testimonial-section {
       padding: 60px 0;
       background-color: #f8f9fa;
-  }
-  
-  .container {
+    }
+    
+    .container {
       width: 90%;
       max-width: 1200px;
       margin: 0 auto;
-  }
-  
-  .row {
+    }
+    
+    .row {
       display: flex;
-      flex-direction: row; /* Changed to row (normal flow) */
+      flex-direction: row;
       flex-wrap: wrap;
-  }
-  
-  .col-md-5 {
+    }
+    
+    .col-md-5 {
       flex: 0 0 40%;
       padding: 0 15px;
-  }
-  
-  .col-md-7 {
+    }
+    
+    .col-md-7 {
       flex: 0 0 60%;
       padding: 0 15px;
       position: relative;
-  }
-  
-  h2 {
+    }
+    
+    h2 {
       margin-bottom: 1rem;
       font-size: 2rem;
-  }
-  
-  /* Card Grid */
-  .testimonial-container {
+    }
+    
+    /* Card Grid */
+    .testimonial-container {
       position: relative;
       overflow: hidden;
       margin-bottom: 20px;
-  }
-  
-  .testimonial-grid {
+    }
+    
+    .testimonial-grid {
       display: flex;
       transition: transform 0.6s ease;
       gap: 15px;
-  }
-  
-  .testimonial-item {
+    }
+    
+    .testimonial-item {
       flex: 0 0 calc(33.333% - 10px);
-      min-width: calc(33.333% - 10px); /* Ensure cards maintain width */
+      min-width: calc(33.333% - 10px);
       border-radius: 8px;
       overflow: hidden;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  }
-  
-  .testimonial-image {
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    
+    .testimonial-item:hover {
+      transform: scale(1.03);
+    }
+    
+    .testimonial-image {
       width: 100%;
       height: auto;
       border-radius: 8px;
-  }
-  
-  /* Navigation */
-  .testimonial-arrow {
+    }
+    
+    /* Navigation */
+    .testimonial-arrow {
       cursor: pointer;
       position: absolute;
       top: 50%;
@@ -410,27 +415,27 @@
       font-size: 16px;
       transition: 0.6s ease;
       z-index: 10;
-  }
-  
-  .prev-arrow {
+    }
+    
+    .prev-arrow {
       left: 10px;
-  }
-  
-  .next-arrow {
+    }
+    
+    .next-arrow {
       right: 10px;
-  }
-  
-  .prev-arrow:hover, .next-arrow:hover {
+    }
+    
+    .prev-arrow:hover, .next-arrow:hover {
       background-color: #c50000;
-  }
-  
-  /* Dots */
-  .testimonial-dots {
+    }
+    
+    /* Dots */
+    .testimonial-dots {
       text-align: center;
       margin-top: 20px;
-  }
-  
-  .dot {
+    }
+    
+    .dot {
       cursor: pointer;
       height: 12px;
       width: 12px;
@@ -439,29 +444,90 @@
       border-radius: 50%;
       display: inline-block;
       transition: background-color 0.6s ease;
-  }
-  
-  .dot.active,
-  .dot:hover {
+    }
+    
+    .dot.active,
+    .dot:hover {
       background-color: #e50000;
-  }
-  
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
+    }
+    
+    /* Modal Popup - Reduced size, no white background */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.85);
+      animation: fadeIn 0.3s;
+    }
+    
+    @keyframes fadeIn {
+      from {opacity: 0}
+      to {opacity: 1}
+    }
+    
+    .modal-content {
+      margin: auto;
+      display: block;
+      width: auto;
+      max-width: 70%;
+      max-height: 70vh;
+      object-fit: contain;
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+      animation: zoom 0.3s;
+      background: transparent; /* Remove white background */
+      border: none; /* Remove any border */
+      box-shadow: none; /* Remove any shadow */
+    }
+    
+    @keyframes zoom {
+      from {transform: translateY(-50%) scale(0.8)}
+      to {transform: translateY(-50%) scale(1)}
+    }
+    
+    .close-modal {
+      position: absolute;
+      top: 20px;
+      right: 35px;
+      color: #f1f1f1;
+      font-size: 40px;
+      font-weight: bold;
+      transition: 0.3s;
+      cursor: pointer;
+      z-index: 1001;
+    }
+    
+    .close-modal:hover {
+      color: #e50000;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
       .row {
-          flex-direction: column; /* Stack on mobile */
+        flex-direction: column;
       }
       
       .col-md-5, .col-md-7 {
-          flex: 0 0 100%;
-          margin-bottom: 30px;
+        flex: 0 0 100%;
+        margin-bottom: 30px;
       }
       
       .testimonial-item {
-          flex: 0 0 calc(100% - 10px);
-          min-width: calc(100% - 10px);
+        flex: 0 0 calc(100% - 10px);
+        min-width: calc(100% - 10px);
       }
-  }
+      
+      .modal-content {
+        max-width: 85%;
+        max-height: 60vh;
+      }
+    }
     
     /*Gallery section */
     .gallery-section {
@@ -859,7 +925,7 @@
             <a class="nav-link" href="#contact">Contact</a>
           </li>
         </ul>
-        <a href="#register" class="btn btn-outline-primary rounded-pill ms-3">Get Started</a>
+        <a href="./internationalexams.html" class="btn btn-outline-primary rounded-pill ms-3">Get Started</a>
       </div>
     </div>
   </nav>
@@ -873,7 +939,7 @@
         <h1>From Tech Solutions to International Impact, We've Got You Covered.</h1>
         <p>Learn tech, explore top courses, land internships, and ace global exams like IELTS, SAT, TOEFL, and GRE with expert guidance.<br><br>
           Want to ace your IELTS, SAT, TOEFL, or GRE?</p>
-        <a href="https://docs.google.com/forms/d/1zlurl4ltiDzKLo200-oU5IOg15JgnqujFexC2g9WSsg/edit" class="btn btn-primary btn-lg rounded-pill">Register now</a>
+        <a href="./internationalexams.html" class="btn btn-primary btn-lg rounded-pill">Register now</a>
       </div>
       
       <!-- Right column with image -->
@@ -895,7 +961,7 @@
   <!-- Statement Section -->
   <section id="about" class="statement-section">
     <div class="container">
-      <h2 class="text-center mb-5">The JM Tech Centre Statement</h2>
+      <h2 class="text-center mb-5"><b>The JM Tech Centre Statement</b></h2>
       <div class="row">
         <div class="col-md-4 mb-4">
           <div class="statement-card">
@@ -944,8 +1010,9 @@
                 <li><i class="fas fa-check-circle"></i> Certification preparation</li>
                 <li><i class="fas fa-check-circle"></i> Exam center facilities</li>
                 <li><i class="fas fa-check-circle"></i> Registration assistance</li>
+                <li><i class="fas fa-check-circle"></i> Tutorial Enrolment</li>
               </ul>
-              <a href="#" class="btn btn-learn-more">Learn More</a>
+              <a href="./internationalexams.html" class="btn btn-learn-more">Learn More</a>
             </div>
           </div>
         </div>
@@ -1001,18 +1068,18 @@
         <div class="service-card">
           <div class="service-card-inner">
             <div class="service-card-front">
-              <img src="./assets/services/TALENT_RECRUITMENT.JPG" alt="Talent Recruitment">
-              <h4>Talent Recruitment</h4>
+              <img src="./assets/services//Consultation.JPG" alt="Talent Recruitment">
+              <h4>Consultation</h4>
               <!-- Flip button will be added by JavaScript for touch devices -->
             </div>
             <div class="service-card-back">
-              <h4>Talent Recruitment</h4>
+              <h4>Consultation</h4>
               <ul>
-                <li><i class="fas fa-check-circle"></i> Job placement</li>
-                <li><i class="fas fa-check-circle"></i> Resume preparation</li>
-                <li><i class="fas fa-check-circle"></i> Interview coaching</li>
+                <li><i class="fas fa-check-circle"></i> Tailored migration strategies</li>
+                <li><i class="fas fa-check-circle"></i> Visa application support</li>
+                <li><i class="fas fa-check-circle"></i> Career and education planning</li>
               </ul>
-              <a href="#" class="btn btn-learn-more">Learn More</a>
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSfAV16hmLRAigJjA-f10daSJC8151MG0M7MVabEUhL9ZYGGLQ/viewform?usp=dialo" class="btn btn-learn-more">Book a session</a>
             </div>
           </div>
         </div>
@@ -1021,67 +1088,76 @@
   </div>
 </section>
 
-  <!-- Testimonials Section -->
-  <section id="testimonials" class="testimonial-section">
-    <div class="container">
-        <div class="row">
-            <!-- Left column: Heading and intro text -->
-            <div class="col-md-5">
-                <h2 class="mb-4"><b>Testimonials & Success Stories</b></h2>
-                <p>Discover how our programs have transformed careers and lives. Our graduates have gone on to work at top companies and launch successful businesses in tech.</p>
+ <!-- Testimonials Section -->
+ <section id="testimonials" class="testimonial-section">
+  <div class="container">
+    <div class="row">
+      <!-- Left column: Heading and intro text -->
+      <div class="col-md-5">
+        <h2 class="mb-4"><b>Testimonials & Success Stories</b></h2>
+        <p>Discover how our programs have transformed careers and lives. Our graduates have gone on to work at top companies and launch successful businesses in tech.</p>
+      </div>
+      
+      <!-- Right column: Testimonial cards -->
+      <div class="col-md-7">
+        <div class="testimonial-container">
+          <div class="testimonial-grid" id="testimonialGrid">
+            <!-- Testimonial Item 1 -->
+            <div class="testimonial-item" onclick="openModal('./assets/Testimonials/Artboard 2.jpg')">
+              <img src="./assets/Testimonials/Artboard 2.jpg" alt="Student 1" class="testimonial-image">
             </div>
             
-            <!-- Right column: Testimonial cards -->
-            <div class="col-md-7">
-                <div class="testimonial-container">
-                    <div class="testimonial-grid" id="testimonialGrid">
-                        <!-- Testimonial Item 1 -->
-                        <div class="testimonial-item">
-                            <img src="./assets/Testimonials/Artboard 2.jpg" alt="Student 1" class="testimonial-image">
-                        </div>
-                        
-                        <!-- Testimonial Item 2 -->
-                        <div class="testimonial-item">
-                            <img src="./assets/Testimonials/Artboard 2 copy 2.jpg" alt="Student 2" class="testimonial-image">
-                        </div>
-                        
-                        <!-- Testimonial Item 3 -->
-                        <div class="testimonial-item">
-                            <img src="./assets/Testimonials/Artboard 2 copy 3.jpg" alt="Student 3" class="testimonial-image">
-                        </div>
-                        
-                        <!-- Testimonial Item 4 -->
-                        <div class="testimonial-item">
-                            <img src="./assets/Testimonials/Artboard 2 copy 4.jpg" alt="Student 4" class="testimonial-image">
-                        </div>
-                        
-                        <!-- Testimonial Item 5 -->
-                        <div class="testimonial-item">
-                            <img src="./assets/Testimonials/Artboard 2 copy 5.jpg" alt="Student 5" class="testimonial-image">
-                        </div>
-                        
-                        <!-- Testimonial Item 6 -->
-                        <div class="testimonial-item">
-                            <img src="./assets/Testimonials/Artboard 2 copy.jpgs" alt="Student 6" class="testimonial-image">
-                        </div>
-                    </div>
-                    
-                    <!-- Navigation Arrows -->
-                    <button class="testimonial-arrow prev-arrow" onclick="scrollTestimonials(-1)">&#10094;</button>
-                    <button class="testimonial-arrow next-arrow" onclick="scrollTestimonials(1)">&#10095;</button>
-                </div>
-                
-                <!-- Testimonial Navigation Dots -->
-                <div class="testimonial-dots">
-                    <span class="dot active" onclick="jumpToPage(0)"></span>
-                    <span class="dot" onclick="jumpToPage(1)"></span>
-                    <span class="dot" onclick="jumpToPage(2)"></span>
-                    <span class="dot" onclick="jumpToPage(3)"></span>
-                </div>
+            <!-- Testimonial Item 2 -->
+            <div class="testimonial-item" onclick="openModal('./assets/Testimonials/Artboard 2 copy 2.jpg')">
+              <img src="./assets/Testimonials/Artboard 2 copy 2.jpg" alt="Student 2" class="testimonial-image">
             </div>
+            
+            <!-- Testimonial Item 3 -->
+            <div class="testimonial-item" onclick="openModal('./assets/Testimonials/Artboard 2 copy 3.jpg')">
+              <img src="./assets/Testimonials/Artboard 2 copy 3.jpg" alt="Student 3" class="testimonial-image">
+            </div>
+            
+            <!-- Testimonial Item 4 -->
+            <div class="testimonial-item" onclick="openModal('./assets/Testimonials/Artboard 2 copy 4.jpg')">
+              <img src="./assets/Testimonials/Artboard 2 copy 4.jpg" alt="Student 4" class="testimonial-image">
+            </div>
+            
+            <!-- Testimonial Item 5 -->
+            <div class="testimonial-item" onclick="openModal('./assets/Testimonials/Artboard 2 copy 5.jpg')">
+              <img src="./assets/Testimonials/Artboard 2 copy 5.jpg" alt="Student 5" class="testimonial-image">
+            </div>
+            
+            <!-- Testimonial Item 6 -->
+            <div class="testimonial-item" onclick="openModal('./assets/Testimonials/Artboard 2 copy.jpgs')">
+              <img src="./assets/Testimonials/Artboard 2 copy.jpg" alt="Student 6" class="testimonial-image">
+            </div>
+          </div>
+          
+          <!-- Navigation Arrows -->
+          <button class="testimonial-arrow prev-arrow" onclick="scrollTestimonials(-1)">&#10094;</button>
+          <button class="testimonial-arrow next-arrow" onclick="scrollTestimonials(1)">&#10095;</button>
         </div>
+        
+        <!-- Testimonial Navigation Dots -->
+        <div class="testimonial-dots">
+          <span class="dot active" onclick="jumpToPage(0)"></span>
+          <span class="dot" onclick="jumpToPage(1)"></span>
+          <span class="dot" onclick="jumpToPage(2)"></span>
+          <span class="dot" onclick="jumpToPage(3)"></span>
+          <span class="dot" onclick="jumpToPage(4)"></span>
+          <span class="dot" onclick="jumpToPage(5)"></span>
+          <span class="dot" onclick="jumpToPage(6)"></span>
+        </div>
+      </div>
     </div>
+  </div>
 </section>
+
+<!-- Modal for enlarged image view - Smaller size, no background -->
+<div id="imageModal" class="modal">
+  <span class="close-modal" onclick="closeModal()">&times;</span>
+  <img id="modalImage" class="modal-content">
+</div>
 
 <!-- Gallery Section -->
 <section id="gallery" class="gallery-section py-5">
@@ -1226,8 +1302,8 @@
                 <div class="event-month">APRIL</div>
                 <h4 class="event-title">From Concept to Creation (C-2-C)</h4>
                 <p class="event-description">The Robotic Journey: From Concept to Creation (C-2-C) is an immersive, hands-on workshop designed to bring together tech enthusiasts, engineers, and industry leaders to explore the latest advancements in robotics, AI, and hardware engineering.</p>
-                <div class="event-time">11:00 AM - 5:00 PM</div>
-                <div class="event-location">JMTech Centre, Ikun-Ekiti</div>
+                <div class="event-time">Time: <b>11:00 AM - 5:00 PM</b></div>
+                <div class="event-location">Venue: <b>JMTech Centre, Ikun-Ekiti</b></div>
                 <button class="register-btn">REGISTER NOW</button>
             </div>
         </div>
@@ -1333,7 +1409,7 @@
                 <h2>Register Here to join a training</h2>
                 <p>Registration to get access to training on any of our courses is ongoing</p>
                 <p>Click on the Register button below to get started with your application</p>
-                <a href="./onboarding.html" class="btn btn-register">Get Started</a>
+                <a href="./internationalexams.html" class="btn btn-register">Get Started</a>
               </div>
             </div>
           </div>
@@ -1432,7 +1508,7 @@
           <div class="social-icons">
             <a href="https://www.facebook.com/jmtechcenter/"><i class="fab fa-facebook"></i></a>
             <a href="https://www.instagram.com/jmtechcentre?igsh=MXN4dThrOXkwa2lpdA=="><i class="fab fa-instagram"></i></a>
-            <a href="https://www.facebook.com/jmtechcenter/"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.linkedin.com/company/jm-tech-centre/"><i class="fab fa-linkedin"></i></a>
             <a href="#"><i class="fab fa-youtube"></i></a>
           </div>
         </div>
@@ -1474,105 +1550,119 @@
     }, 1000);
 
     // Testimonial grid scrolling
-    let currentPage = 0;
-    const itemsPerPage = 3; // Number of visible items per view
-    const totalItems = document.querySelectorAll('.testimonial-item').length;
-    const maxPage = Math.ceil(totalItems / itemsPerPage) - 1;
-    let autoScrollInterval;
-    
-    // Initialize
-    document.addEventListener("DOMContentLoaded", function() {
-        updateGrid();
-        startAutoScroll();
-    });
-    
-    // Start auto scrolling
-    function startAutoScroll() {
-        autoScrollInterval = setInterval(() => {
-            scrollTestimonials(1);
-        }, 5000);
-    }
-    
-    // Scroll testimonials left or right
-    function scrollTestimonials(direction) {
-        clearInterval(autoScrollInterval);
-        
-        currentPage += direction;
-        
-        // Loop back to first or last page if needed
-        if (currentPage < 0) {
-            currentPage = maxPage;
-        } else if (currentPage > maxPage) {
-            currentPage = 0;
-        }
-        
-        updateGrid();
-        updateDots();
-        startAutoScroll();
-    }
-    
-    // Jump to a specific page
-    function jumpToPage(pageNum) {
-        clearInterval(autoScrollInterval);
-        currentPage = pageNum;
-        updateGrid();
-        updateDots();
-        startAutoScroll();
-    }
-    
-    // Update grid position
-    function updateGrid() {
-        const grid = document.getElementById('testimonialGrid');
-        const scrollAmount = -1 * currentPage * (100 / itemsPerPage);
-        grid.style.transform = `translateX(${scrollAmount}%)`;
-    }
-    
-    // Update active dot
-    function updateDots() {
-        const dots = document.querySelectorAll('.dot');
-        dots.forEach((dot, index) => {
-            if (index === currentPage) {
-                dot.classList.add('active');
-            } else {
-                dot.classList.remove('active');
-            }
-        });
-    }
+let currentPage = 0;
+const itemsPerPage = 3; // Number of visible items per view
+let totalItems;
+let maxPage;
+let autoScrollInterval;
 
-    // Add this script at the end of your HTML, right before the closing </body> tag
-document.addEventListener('DOMContentLoaded', function() {
-  // Check if device is touch-capable
-  const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+// Initialize
+document.addEventListener("DOMContentLoaded", function() {
+  // Count total items dynamically
+  totalItems = document.querySelectorAll('.testimonial-item').length;
+  maxPage = Math.ceil(totalItems / itemsPerPage) - 1;
   
-  if (isTouchDevice) {
-    // Add flip buttons to all service cards
-    document.querySelectorAll('.service-card-front').forEach(front => {
-      const flipButton = document.createElement('button');
-      flipButton.className = 'flip-button';
-      flipButton.innerHTML = '<i class="fas fa-redo"></i>'; // Rotation icon
-      front.appendChild(flipButton);
-    });
-    
-    // Add click event listeners to flip buttons
-    document.querySelectorAll('.flip-button').forEach(button => {
-      button.addEventListener('click', function(e) {
-        e.stopPropagation(); // Prevent the click from propagating
-        const card = this.closest('.service-card');
-        card.classList.toggle('active');
-      });
-    });
-    
-    // Add click event to back side to flip back
-    document.querySelectorAll('.service-card-back').forEach(back => {
-      back.addEventListener('click', function() {
-        const card = this.closest('.service-card');
-        if (!event.target.classList.contains('btn-learn-more')) {
-          card.classList.remove('active');
-        }
-      });
-    });
-  }
+  // Update dots to match actual number of testimonials
+  updateDots();
+  updateGrid();
+  startAutoScroll();
 });
+
+// Start auto scrolling
+function startAutoScroll() {
+  clearInterval(autoScrollInterval);
+  autoScrollInterval = setInterval(() => {
+    scrollTestimonials(1);
+  }, 5000);
+}
+
+// Scroll testimonials left or right
+function scrollTestimonials(direction) {
+  clearInterval(autoScrollInterval);
+  
+  currentPage += direction;
+  
+  // Loop back to first or last page if needed
+  if (currentPage < 0) {
+    currentPage = maxPage;
+  } else if (currentPage > maxPage) {
+    currentPage = 0;
+  }
+  
+  updateGrid();
+  updateDots();
+  startAutoScroll();
+}
+
+// Jump to a specific page
+function jumpToPage(pageNum) {
+  clearInterval(autoScrollInterval);
+  
+  // Ensure page number is valid
+  if (pageNum >= 0 && pageNum <= maxPage) {
+    currentPage = pageNum;
+    updateGrid();
+    updateDots();
+  }
+  
+  startAutoScroll();
+}
+
+// Update grid position
+function updateGrid() {
+  const grid = document.getElementById('testimonialGrid');
+  const scrollAmount = -1 * currentPage * (100 / (itemsPerPage / 3));
+  grid.style.transform = `translateX(${scrollAmount}%)`;
+}
+
+// Update active dot
+function updateDots() {
+  // First, make sure we have the right number of dots
+  const dotsContainer = document.querySelector('.testimonial-dots');
+  
+  // Clear existing dots
+  dotsContainer.innerHTML = '';
+  
+  // Create the correct number of dots based on the number of pages
+  for (let i = 0; i <= maxPage; i++) {
+    const dot = document.createElement('span');
+    dot.className = 'dot' + (i === currentPage ? ' active' : '');
+    dot.onclick = function() { jumpToPage(i); };
+    dotsContainer.appendChild(dot);
+  }
+}
+
+// Modal functionality
+function openModal(imageSrc) {
+  // Stop auto scrolling when modal is open
+  clearInterval(autoScrollInterval);
+  
+  const modal = document.getElementById('imageModal');
+  const modalImg = document.getElementById('modalImage');
+  
+  modalImg.src = imageSrc;
+  modal.style.display = "block";
+  
+  // Add event listener to close modal when clicking outside the image
+  modal.addEventListener('click', function(event) {
+    if (event.target === modal) {
+      closeModal();
+    }
+  });
+  
+  // Add keyboard support (Escape key to close)
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+      closeModal();
+    }
+  });
+}
+
+function closeModal() {
+  document.getElementById('imageModal').style.display = "none";
+  // Resume auto scrolling
+  startAutoScroll();
+}
 
 //Gallery Section
 document.addEventListener('DOMContentLoaded', function() {
