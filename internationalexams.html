@@ -180,6 +180,52 @@
             padding: 80px 0;
         }
 
+        /* FAQs Section */
+        .faq-section {
+            padding: 80px 0;
+            background-color: #f8f9fa;
+        }
+        
+        .accordion-item {
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,.125);
+            box-shadow: 0 2px 10px rgba(0,0,0,.05);
+        }
+        
+        .accordion-button {
+            font-family: 'Khula-SemiBold', sans-serif;
+            padding: 20px;
+            background-color: white;
+            color: #333;
+        }
+        
+        .accordion-button:not(.collapsed) {
+            background-color: var(--primary-color);
+            color: white;
+            box-shadow: none;
+        }
+        
+        .accordion-button:focus {
+            box-shadow: none;
+            border-color: rgba(0,0,0,.125);
+        }
+        
+        .accordion-button::after {
+            background-size: 1.2rem;
+            width: 1.2rem;
+            height: 1.2rem;
+        }
+        
+        .accordion-button:not(.collapsed)::after {
+            filter: brightness(0) invert(1);
+        }
+        
+        .accordion-body {
+            padding: 20px;
+            background-color: white;
+        }
+
         /* CTA Section */
         .cta-section {
             padding: 100px 0;
@@ -519,6 +565,66 @@ footer {
         </div>
     </section>
 
+    <!-- This code should be placed after the tutorial fees table in the tutorial-section -->
+
+<div class="row mt-5" data-aos="fade-up" data-aos-delay="300">
+    <div class="col-lg-8 mx-auto">
+        <div class="card">
+            <div class="card-header text-white" style="background-color: #e50000;">
+                <h4 class="mb-0">Balanced Class Schedule</h4>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Day</th>
+                                <th>Time Slot</th>
+                                <th>Class</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Monday</td>
+                                <td>9:00 AM–12:00 PM</td>
+                                <td>IELTS</td>
+                            </tr>
+                            <tr>
+                                <td>Monday</td>
+                                <td>2:00 PM–5:00 PM</td>
+                                <td>TOEFL</td>
+                            </tr>
+                            <tr>
+                                <td>Wednesday</td>
+                                <td>9:00 AM–12:00 PM</td>
+                                <td>TOEFL</td>
+                            </tr>
+                            <tr>
+                                <td>Wednesday</td>
+                                <td>2:00 PM–5:00 PM</td>
+                                <td>IELTS</td>
+                            </tr>
+                            <tr>
+                                <td>Friday</td>
+                                <td>9:00 AM–12:00 PM</td>
+                                <td>IELTS</td>
+                            </tr>
+                            <tr>
+                                <td>Friday</td>
+                                <td>2:00 PM–5:00 PM</td>
+                                <td>TOEFL</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="text-center mt-3">
+                    <p class="mb-0"><small class="text-muted">Additional schedules for GRE, GMAT, SAT and PTE classes available upon request</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
     <!-- Study Materials Section -->
     <section class="materials-section" id="materials-section">
         <div class="container">
@@ -596,6 +702,140 @@ footer {
             </div>
         </div>
     </section>
+
+    <!-- FAQ Section -->
+<section class="faq-section" id="faq-section">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 data-aos="fade-up"><b>Frequently Asked Questions</b></h2>
+            <p data-aos="fade-up" data-aos-delay="100">Get answers to commonly asked questions about our international exam services</p>
+        </div>
+        
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="accordion" id="examFAQ" data-aos="fade-up" data-aos-delay="200">
+                    
+                    <div class="accordion-item mb-3">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Which exam should I choose to meet my academic or migration goals?
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#examFAQ">
+                            <div class="accordion-body">
+                                Choose the exam that matches the requirements of your target institution or visa authority. For instance, IELTS, TOEFL, or UK SELT are essential for English proficiency, while GRE or SAT is used for academic admissions. Your specific goal—whether it’s studying abroad, securing a job, or migrating—will dictate the best choice.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item mb-3">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                What are the differences between IELTS, TOEFL, GRE, SAT, and UK SELT?
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#examFAQ">
+                            <div class="accordion-body">
+                                IELTS, TOEFL, and UK SELT assess English language skills for academic, migration, or professional purposes. The GRE evaluates graduate-level readiness in verbal, quantitative, and analytical writing skills, and the SAT is used primarily for undergraduate admissions. Each test has its own format, scoring system, and target audience.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item mb-3">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Which materials or resources should I use for exam preparation?
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#examFAQ">
+                            <div class="accordion-body">
+                                Use official study guides and practice tests provided by the exam organizers, reputable online courses, textbooks, and consider joining our preparatory classes to get additional insights and tips.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item mb-3">
+                        <h2 class="accordion-header" id="headingFour">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                Do you offer preparatory classes or lectures before the exam?
+                            </button>
+                        </h2>
+                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#examFAQ">
+                            <div class="accordion-body">
+                                Yes.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item mb-3">
+                        <h2 class="accordion-header" id="headingFive">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                What is the validity period for the exam scores?
+                            </button>
+                        </h2>
+                        <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#examFAQ">
+                            <div class="accordion-body">
+                                Generally, IELTS and TOEFL scores are valid for two years, while GRE scores are valid for five years. Always verify with the official exam provider, as validity can affect your application timeline.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item mb-3">
+                        <h2 class="accordion-header" id="headingSix">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                Can I prepare for these exams while working full-time?
+                            </button>
+                        </h2>
+                        <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#examFAQ">
+                            <div class="accordion-body">
+                                Absolutely.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item mb-3">
+                        <h2 class="accordion-header" id="headingSeven">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                                What strategies can help me excel in the writing and speaking sections?
+                            </button>
+                        </h2>
+                        <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#examFAQ">
+                            <div class="accordion-body">
+                                Practice consistently by writing essays and recording your spoken responses. Use sample questions, seek feedback from tutors, and familiarize yourself with the test’s format. Focus on clarity, structure, and fluency.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item mb-3">
+                        <h2 class="accordion-header" id="headingSeven">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                                What is the format and structure of the GRE or SAT exams?
+                            </button>
+                        </h2>
+                        <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#examFAQ">
+                            <div class="accordion-body">
+                                The GRE comprises verbal reasoning, quantitative reasoning, and analytical writing sections. The SAT includes evidence-based reading, writing and language, and mathematics.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item mb-3">
+                        <h2 class="accordion-header" id="headingEight">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                                Can I schedule a consultation to discuss my exam choice and preparation plan?
+                            </button>
+                        </h2>
+                        <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#examFAQ">
+                            <div class="accordion-body">
+                                Yes.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
     <!-- CTA Section -->
     <section class="cta-section">

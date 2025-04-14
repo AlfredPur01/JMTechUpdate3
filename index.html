@@ -9,6 +9,18 @@
   <!-- Font Awesome for icons -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <style>
+    @font-face {
+      font-family: 'Khula-Regular';
+      src: url('fonts/Khula-Regular.ttf') format('truetype');
+  }
+  @font-face {
+      font-family: 'Khula-SemiBold';
+      src: url('fonts/Khula-SemiBold.ttf') format('truetype');
+  }
+  @font-face {
+      font-family: 'Khula-ExtraBold';
+      src: url('fonts/Khula-ExtraBold.ttf') format('truetype');
+  }
     :root {
       --primary-color: #e50000;
       --dark-blue: #0a0a2e;
@@ -16,8 +28,15 @@
     }
     
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Khula-Regular', sans-serif;
     }
+    h1, h2, h3 {
+      font-family: 'Khula-ExtraBold', sans-serif;
+  }
+
+  h4, h5, .nav-link, .btn {
+      font-family: 'Khula-SemiBold', sans-serif;
+  }
     
     /* Navbar styles */
     .navbar {
@@ -831,6 +850,84 @@
           height: 200px;
       }
   }
+
+  /* Blog Section */.
+  :root {
+    --brand-red: #e50000;
+    --white: #ffffff;
+  }
+  
+  .btn-primary {
+    background-color: var(--brand-red);
+    border-color: var(--brand-red);
+  }
+  
+  .btn-primary:hover {
+    background-color: #c50000;
+    border-color: #c50000;
+  }
+  
+  .blog-card {
+    height: 100%;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+  
+  .blog-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .card-img-container {
+    height: 180px;
+    overflow: hidden;
+  }
+  
+  .blog-section {
+    padding: 5rem 0;
+    background-color: var(--white);
+  }
+  
+  .blog-title {
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 2.5rem;
+  }
+  
+  .view-all-btn {
+    margin-top: 2rem;
+  }
+
+  /* Registration section */.
+  /* Additional responsive styles */
+@media (max-width: 767px) {
+  .register-content h2 {
+    font-size: 1.5rem;
+  }
+  
+  .small-text {
+    font-size: 0.9rem;
+  }
+  
+  .btn-register {
+    font-size: 0.9rem;
+    padding: 0.375rem 1.5rem !important;
+  }
+}
+
+/* Extra small devices (portrait phones) */
+@media (max-width: 575px) {
+  .register-content h2 {
+    font-size: 1.25rem;
+  }
+  
+  .small-text {
+    font-size: 0.85rem;
+  }
+  
+  .register-content {
+    padding: 0.75rem !important;
+  }
+}
     
     /* Footer */
     .footer {
@@ -936,7 +1033,7 @@
     <div class="row align-items-center">
       <!-- Left column with text content -->
       <div class="col-lg-6">
-        <h1>From Tech Solutions to International Impact, We've Got You Covered.</h1>
+        <h1>From Tech Solutions to International Impact!</h1>
         <p>Learn tech, explore top courses, land internships, and ace global exams like IELTS, SAT, TOEFL, and GRE with expert guidance.<br><br>
           Want to ace your IELTS, SAT, TOEFL, or GRE?</p>
         <a href="./internationalexams.html" class="btn btn-primary btn-lg rounded-pill">Register now</a>
@@ -1035,7 +1132,7 @@
                 <li><i class="fas fa-check-circle"></i> Cyber Security</li>
                 <li><i class="fas fa-check-circle"></i> Digital Marketing</li>
               </ul>
-              <a href="#" class="btn btn-learn-more">Learn More</a>
+              <a href="#" class="btn btn-learn-more">Register</a>
             </div>
           </div>
         </div>
@@ -1057,7 +1154,7 @@
                 <li><i class="fas fa-check-circle"></i> Project-based learning</li>
                 <li><i class="fas fa-check-circle"></i> Industry mentorship</li>
               </ul>
-              <a href="#" class="btn btn-learn-more">Learn More</a>
+              <a href="#events" class="btn btn-learn-more">See Upciming Event</a>
             </div>
           </div>
         </div>
@@ -1128,7 +1225,7 @@
             </div>
             
             <!-- Testimonial Item 6 -->
-            <div class="testimonial-item" onclick="openModal('./assets/Testimonials/Artboard 2 copy.jpgs')">
+            <div class="testimonial-item" onclick="openModal('./assets/Testimonials/Artboard 2 copy.jpg')">
               <img src="./assets/Testimonials/Artboard 2 copy.jpg" alt="Student 6" class="testimonial-image">
             </div>
           </div>
@@ -1289,7 +1386,7 @@
   </section>
 
   <!-- Events Section -->
-  <section class="py-5">
+  <section class="py-5" id="events">
     <div class="container">
         <h2 class="text-center section-heading"><b>UPCOMING EVENTS</b></h2>
         <div class="heading-underline"></div>
@@ -1311,45 +1408,62 @@
   </section>
 
   <!-- Blog Section -->
-  <section id="blog" class="py-5">
+  <section id="blog" class="blog-section">
     <div class="container">
-      <h2 class="text-center mb-5"><b>Recent Blogs</b></h2>
-      <div class="overflow-hidden">
-        <div class="d-flex blog-slider">
-          <div class="card mx-3" style="min-width: 300px;">
-            <img src="./assets/img/courses/4.png" class="card-img-top" alt="IT Certification" style="height: 180px; object-fit: cover;">
-            <div class="card-body">
-              <h5>Exam Tips for IT Certification</h5>
-              <p>Learn how to prepare effectively for your next IT certification exam.</p>
-              <a href="#" class="btn btn-sm btn-primary">Read More</a>
+      <h2 class="text-center blog-title"><b>Recent Blogs</b></h2>
+      
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        <!-- Blog Card 1 -->
+        <div class="col">
+          <div class="card blog-card">
+            <div class="card-img-container">
+              <img src="./assets/services/INT_EXAMS.JPG" class="card-img-top" alt="IT Certification" style="object-fit: cover; height: 100%; width: 100%;">
+            </div>
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Master International Exams: Complete Preparation Guide</h5>
+              <p class="card-text flex-grow-1">Comprehensive strategies and expert tips to excel in IELTS, SAT, TOEFL, and GRE exams...</p>
+              <a href="#" class="btn btn-sm btn-primary mt-2">Read More</a>
             </div>
           </div>
-          <div class="card mx-3" style="min-width: 300px;">
-            <img src="./assets/img/courses/4.png" class="card-img-top" alt="Career Paths" style="height: 180px; object-fit: cover;">
-            <div class="card-body">
-              <h5>Career Guide: Paths in Tech</h5>
-              <p>Explore different career paths in the technology sector and find what suits you.</p>
-              <a href="#" class="btn btn-sm btn-primary">Read More</a>
+        </div>
+        
+        <!-- Blog Card 2 -->
+        <div class="col">
+          <div class="card blog-card">
+            <div class="card-img-container">
+              <img src="./assets/services/TECH_WORKSHOP.JPG" class="card-img-top" alt="Career Paths" style="object-fit: cover; height: 100%; width: 100%;">
+            </div>
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Career Guide: Paths in Tech</h5>
+              <p class="card-text flex-grow-1">Explore different career paths in the technology sector and find what suits you.</p>
+              <a href="#" class="btn btn-sm btn-primary mt-2">Read More</a>
             </div>
           </div>
-          <div class="card mx-3" style="min-width: 300px;">
-            <img src="./assets/img/courses/4.png" class="card-img-top" alt="Tech Trends" style="height: 180px; object-fit: cover;">
-            <div class="card-body">
-              <h5>Latest Tech Trends in 2025</h5>
-              <p>Stay updated with the latest technologies shaping our digital future.</p>
-              <a href="#" class="btn btn-sm btn-primary">Read More</a>
+        </div>
+        
+        <!-- Blog Card 3 -->
+        <div class="col">
+          <div class="card blog-card">
+            <div class="card-img-container">
+              <img src="./assets/services/TALENT_RECRUITMENT.JPG" class="card-img-top" alt="Tech Trends" style="object-fit: cover; height: 100%; width: 100%;">
+            </div>
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Latest Tech Trends in 2025</h5>
+              <p class="card-text flex-grow-1">Stay updated with the latest technologies shaping our digital future.</p>
+              <a href="#" class="btn btn-sm btn-primary mt-2">Read More</a>
             </div>
           </div>
         </div>
       </div>
-      <div class="text-center mt-4">
+      
+      <div class="text-center view-all-btn">
         <a href="#" class="btn btn-primary">View All Posts</a>
       </div>
     </div>
   </section>
 
   <!-- FAQ Section -->
-  <section class="py-5 bg-light">
+  <!--<section class="py-5 bg-light">
     <div class="container">
       <h2 class="text-center mb-5"><b>FAQs</b></h2>
       <div class="accordion" id="faqAccordion">
@@ -1391,25 +1505,25 @@
         </div>
       </div>
     </div>
-  </section>
+  </section>-->
 
-  <!-- Registration Section -->
-<section id="register" class="register-section">
+ <!-- Registration Section -->
+<section id="register" class="register-section py-5">
   <div class="container">
     <div class="register-card position-relative">
       <div class="row g-0">
-        <div class="col-md-12">
+        <div class="col-12">
           <div class="position-relative">
             <!-- Background image -->
             <img src="./assets/background.jpg" alt="Training session" class="img-fluid w-100">
-            
+           
             <!-- Content overlay -->
             <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center" style="background-color: rgba(0, 0, 0, 0.6);">
-              <div class="register-content text-center text-white p-4">
-                <h2>Register Here to join a training</h2>
-                <p>Registration to get access to training on any of our courses is ongoing</p>
-                <p>Click on the Register button below to get started with your application</p>
-                <a href="./internationalexams.html" class="btn btn-register">Get Started</a>
+              <div class="register-content text-center text-white p-3 p-md-4 mx-2 mx-md-auto" style="max-width: 90%;">
+                <h2 class="fs-3 fs-md-2 mb-2 mb-md-3">Register Here to join a training</h2>
+                <p class="mb-2 mb-md-3 small-text">Registration to get access to training on any of our courses is ongoing</p>
+                <p class="mb-3 mb-md-4 small-text">Click on the Register button below to get started with your application</p>
+                <a href="./internationalexams.html" class="btn btn-register px-4 py-2">Get Started</a>
               </div>
             </div>
           </div>
@@ -1514,7 +1628,7 @@
         </div>
         <div class="col-lg-4">
           <h3>Contact Us</h3>
-          <p>Phone: +234 806 039 5407</p>
+          <p>Phone: +23480 6835 2353 or  +23470 1314 3358</p>
           <p>Email: skillslab@jmtechcenter.org</p>
         </div>
       </div>
