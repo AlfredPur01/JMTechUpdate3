@@ -935,31 +935,59 @@
       color: white;
       padding: 50px 0 20px;
     }
-    
+   
     .social-icons a {
       color: white;
       font-size: 24px;
       margin-right: 20px;
       transition: color 0.3s;
     }
-    
+   
     .social-icons a:hover {
       color: var(--primary-color);
     }
-    
+   
     .footer-bottom {
       margin-top: 40px;
       padding-top: 20px;
       border-top: 1px solid #333;
     }
-    
+   
     .back-to-top {
       color: white;
       text-decoration: none;
+      display: inline-flex;
+      align-items: center;
     }
-    
+   
     .back-to-top:hover {
       color: var(--primary-color);
+    }
+    
+    .back-to-top i {
+      color: #e50000;
+      margin-left: 5px;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 992px) {
+      .col-lg-4 {
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-bottom: 30px;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .col-md-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+      
+      .text-end {
+        text-align: left;
+        margin-top: 15px;
+      }
     }
     
     /* CTA Button styling - all changed to #e50000 */
@@ -1637,7 +1665,7 @@
           <p>&copy; 2025 - JMTech Centre All Right Reserved</p>
         </div>
         <div class="col-md-6 text-end">
-          <a href="#" class="back-to-top">Back to top</a>
+          <a href="#" class="back-to-top">Back to top <i class="fas fa-arrow-up"></i></a>
         </div>
       </div>
     </div>
@@ -1662,6 +1690,49 @@
             document.querySelector('.countdown-box').innerHTML = "<h2>Event Started!</h2>";
         }
     }, 1000);
+
+    //Service Section
+
+    // Wait for the DOM to be fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+  // Get all service cards
+  const serviceCards = document.querySelectorAll('.service-card');
+  
+  // Check if device is touch-enabled (alternative method)
+  const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+  
+  serviceCards.forEach(card => {
+    // For touch devices, add a flip button
+    if (isTouchDevice) {
+      const cardFront = card.querySelector('.service-card-front');
+      const flipButton = document.createElement('button');
+      flipButton.className = 'flip-button';
+      flipButton.innerHTML = '<i class="fas fa-sync-alt"></i>'; // Assuming FontAwesome is used
+      flipButton.setAttribute('aria-label', 'Flip card');
+      cardFront.appendChild(flipButton);
+      
+      // Add click event to flip button
+      flipButton.addEventListener('click', function(e) {
+        e.stopPropagation(); // Prevent the card click event from firing
+        card.classList.toggle('active');
+      });
+      
+      // Add click event to the entire card (front side only)
+      cardFront.addEventListener('click', function() {
+        card.classList.add('active');
+      });
+      
+      // Add click event to flip back when clicking anywhere on the back
+      const cardBack = card.querySelector('.service-card-back');
+      cardBack.addEventListener('click', function(e) {
+        // Don't flip back if clicking on a link
+        if (!e.target.closest('a')) {
+          card.classList.remove('active');
+        }
+      });
+    }
+  });
+});
 
     // Testimonial grid scrolling
 let currentPage = 0;
