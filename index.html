@@ -61,67 +61,101 @@
     }
     
     /* Hero section */
-.hero-section {
-  padding: 80px 0;
-  background-color: white;
-}
-
-.hero-section h1 {
-  font-size: 48px;
-  font-weight: 700;
-  color: var(--dark-blue);
-  margin-bottom: 30px;
-}
-
-.hero-section p {
-  font-size: 18px;
-  margin-bottom: 30px;
-  line-height: 1.6;
-}
-
-/* Added spacing between text and image */
-.hero-section .col-lg-6 {
-  padding: 0 25px;
-}
-
-/* Hero image styling */
-.hero-image {
-  border-radius: 10px;
-  overflow: hidden;
-  margin-top: 30px; /* Additional spacing above the image */
-}
-
-/* Quote styling */
-.quote-box {
-  background-color: #000;
-  color: white;
-  padding: 20px;
-  border-radius: 5px;
-  position: relative;
-}
-
-.quote-mark {
-  color: var(--primary-color);
-  font-size: 60px;
-  font-weight: bold;
-  line-height: 0;
-  position: absolute;
-  top: 20px;
-  left: 10px;
-}
-
-/* CTA Button styling */
-.btn-primary {
-  background-color: #e50000;
-  border-color: #e50000;
-  color: white;
-  font-weight: 600;
-}
-
-.btn-primary:hover {
-  background-color: #cc0000;
-  border-color: #cc0000;
-}
+    .hero-section {
+      padding: 80px 0;
+      background-color: white;
+    }
+    
+    .hero-section h1 {
+      font-size: 48px;
+      font-weight: 700;
+      color: var(--dark-blue);
+      margin-bottom: 30px;
+    }
+    
+    .hero-section p {
+      font-size: 18px;
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+    
+    /* Added spacing between text and image */
+    .hero-section .col-lg-6 {
+      padding: 0 25px;
+    }
+    
+    /* Hero image container */
+    .hero-image-container {
+      position: relative;
+      margin-top: 30px;
+      padding-right: 40px;
+      padding-bottom: 40px;
+    }
+    
+    /* Dotted pattern styling - placed underneath and extending beyond the image */
+    .dotted-pattern {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 80%;
+      height: 80%;
+      background-image: radial-gradient(#d3d3d3 2px, transparent 2px);
+      background-size: 15px 15px;
+      z-index: 1;
+      border-radius: 10px;
+    }
+    
+    /* Hero image styling - placed on top of dotted pattern */
+    .hero-image {
+      position: relative;
+      z-index: 2;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Quote box styling */
+    .quote-box {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      background-color: #000;
+      color: white;
+      padding: 20px;
+      border-radius: 5px;
+      max-width: 80%;
+      z-index: 3;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    .quote-text {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 10px;
+    }
+    
+    .quote-text::before {
+      content: '"';
+      color: var(--primary-color);
+      font-size: 40px;
+      font-weight: bold;
+      position: absolute;
+      top: -15px;
+      left: -5px;
+    }
+    
+    /* CTA Button styling */
+    .btn-primary {
+      background-color: #e50000;
+      border-color: #e50000;
+      color: white;
+      font-weight: 600;
+    }
+    
+    .btn-primary:hover {
+      background-color: #cc0000;
+      border-color: #cc0000;
+    }
     
     /* Statement cards */
     .statement-section {
@@ -1056,32 +1090,41 @@
   </nav>
 
   <!-- Hero Section -->
-<section id="home" class="hero-section">
-  <div class="container">
-    <div class="row align-items-center">
-      <!-- Left column with text content -->
-      <div class="col-lg-6">
-        <h1>From Tech Solutions to International Impact!</h1>
-        <p>Learn tech, explore top courses, land internships, and ace global exams like IELTS, SAT, TOEFL, and GRE with expert guidance.<br><br>
-          Want to ace your IELTS, SAT, TOEFL, or GRE?</p>
-        <a href="./internationalexams.html" class="btn btn-primary btn-lg rounded-pill">Register now</a>
-      </div>
-      
-      <!-- Right column with image -->
-      <div class="col-lg-6">
-        <!-- Hero image with quote -->
-        <div class="hero-image position-relative">
-          <img src="./assets/img/Homebg.png" alt="Students working on computers" class="img-fluid rounded">
-          <div class="quote-box position-absolute bottom-0 end-0 m-3">
-            <span class="quote-mark">"</span>
-            <p class="ms-4 mb-0">Dreams don't work unless you take action. The surest way to make your dreams come true is to live them.</p>
-            <p class="text-end fw-bold mb-0 mt-2 text-warning">Roy T. Bennet</p>
+  <section id="home" class="hero-section">
+    <div class="container">
+      <div class="row align-items-center">
+        <!-- Left column with text content -->
+        <div class="col-lg-6">
+          <h1>From Tech Solutions to International Impact!</h1>
+          <p>Learn tech, explore top courses, land internships, and ace global exams like IELTS, SAT, TOEFL, and GRE with expert guidance.<br><br>
+            Want to ace your IELTS, SAT, TOEFL, or GRE?</p>
+          <a href="#" class="btn btn-primary btn-lg rounded-pill">Register now</a>
+        </div>
+        
+        <!-- Right column with image -->
+        <div class="col-lg-6">
+          <!-- Revised hero image structure with dotted pattern underneath -->
+          <div class="hero-image-container">
+            <!-- Dotted pattern that extends beyond the image -->
+            <div class="dotted-pattern"></div>
+            
+            <!-- Hero image -->
+            <div class="hero-image">
+              <img src="./assets/img/Homebg.png" alt="Students working on computers" class="img-fluid rounded">
+              
+              <!-- Quote box positioned on the image -->
+              <div class="quote-box">
+                <p class="quote-text">Dreams don't work unless you take action. The surest way to make your dreams come true is to live them.</p>
+                <p class="text-end fw-bold mb-0" style="color: #ffc107;">Roy T. Bennet</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+</body>
+</html>
 
   <!-- Statement Section -->
   <section id="about" class="statement-section">
@@ -1182,7 +1225,7 @@
                 <li><i class="fas fa-check-circle"></i> Project-based learning</li>
                 <li><i class="fas fa-check-circle"></i> Industry mentorship</li>
               </ul>
-              <a href="#events" class="btn btn-learn-more">See Upciming Event</a>
+              <a href="#events" class="btn btn-learn-more">See Upcoming Events</a>
             </div>
           </div>
         </div>
@@ -1423,8 +1466,8 @@
         <div class="event-card">
             <img src="./assets/img/robotics.JPG" alt="Modern Building Architecture" class="event-image">
             <div class="event-details">
-                <div class="event-date">26</div>
-                <div class="event-month">APRIL</div>
+                <div class="event-date">APRIL</div>
+                <!--<div class="event-month">APRIL</div>-->
                 <h4 class="event-title">From Concept to Creation (C-2-C)</h4>
                 <p class="event-description">The Robotic Journey: From Concept to Creation (C-2-C) is an immersive, hands-on workshop designed to bring together tech enthusiasts, engineers, and industry leaders to explore the latest advancements in robotics, AI, and hardware engineering.</p>
                 <div class="event-time">Time: <b>11:00 AM - 5:00 PM</b></div>
